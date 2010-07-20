@@ -9,7 +9,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100720203952) do
+ActiveRecord::Schema.define(:version => 20100720215200) do
+
+  create_table "apps", :force => true do |t|
+    t.string   "name"
+    t.string   "api_key"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "apps", ["user_id"], :name => "index_apps_on_user_id"
+
+  create_table "reports", :force => true do |t|
+    t.text     "raw"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email"

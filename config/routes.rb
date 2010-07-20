@@ -8,6 +8,10 @@ Crashreportapp::Application.routes.draw do |map|
   resources :users
   resources :user_sessions
   
+  resources :apps do
+    resources :reports
+  end
+  
   
   match '/'         => 'users#new',              :as => 'root'
   
