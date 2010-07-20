@@ -1,0 +1,73 @@
+.info Update your information.
+  
+.left.half
+  - form_for current_user do |form|
+    .right
+      .complete Complete
+    .title Personal information
+    %fieldset
+      %ul
+        %li
+          = form.label :first_name
+          = form.text_field :first_name
+        %li
+          = form.label :last_name
+          = form.text_field :last_name
+        %li
+          = form.label :email, "Email Address"
+          = form.text_field :email
+        %li
+          = form.label :password, "Password"
+          = form.password_field :password
+        %li.submit
+          = form.submit "Update Personal Information"
+
+.right.half
+  %form
+    .right
+      - if current_user.billing_complete?
+        .complete Complete
+      - else
+        .incomplete Incomplete
+    .title Billing information
+    %fieldset
+
+.right.half
+  - form_for current_user do |form|
+    .right
+      - if current_user.phone_complete?
+        .complete Complete
+      - else
+        .incomplete Incomplete
+    .title Phone information
+    %fieldset
+      .small By entering your phone number and pressing "Send Verification SMS" you authorize us to send a verification SMS message to your phone.
+      %ul
+        %li
+          = form.label :phone_number
+          = form.text_field :phone_number
+          .small.weak.left-side Numbers only, please
+        %li.submit
+          = form.submit "Send Verification SMS"
+  
+.left.half
+  - form_for current_user do |form|
+    .right
+      - if current_user.physician_info_complete?
+        .complete Complete
+      - else
+        .incomplete Incomplete
+    .title Physician information
+    %fieldset
+      %ul
+        %li
+          = form.label :dps, "DPS#"
+          = form.text_field :dps
+        %li
+          = form.label :dea, "DEA#"
+          = form.text_field :dea
+        %li
+          = form.label :physician_category, "Category"
+          = form.select(:physician_category, User::PHYSICIAN_CATEGORIES)
+        %li.submit
+          = form.submit "Update Physician Information"

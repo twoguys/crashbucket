@@ -1,0 +1,9 @@
+%li.user{:class => "#{@group.admin?(user) ? "admin" : ""} #{current_user == user ? "me" : ""}"}
+  .name
+    = user.name
+    = "(#{user.email})"
+    - if @group.admin?(user)
+      = "- Admin"
+    - elsif @group.admin?(current_user)
+      = "-"
+      = link_to("make admin", make_admin_group_memberships_path(:user => user), :confirm => "Are you sure?  You will no longer be an admin.")

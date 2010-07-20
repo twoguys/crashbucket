@@ -1,0 +1,18 @@
+%h1 Create an account
+
+= form_for @user do |form|
+  %fieldset
+    %ul
+      %li
+        = form.label :email, "Email Address"
+        = form.text_field :email
+      %li
+        = form.label :password, "Password"
+        = form.password_field :password
+      %li
+        = form.label :password_confirmation, "Password Confirmation"
+        = form.password_field :password_confirmation
+      %li
+        = #recaptcha_tags(:display => { :theme => 'white' }).html_safe
+      %li.submit
+        = form.submit "Create Account"

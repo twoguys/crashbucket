@@ -1,0 +1,14 @@
+.bundle
+log/*.log
+tmp/**/*
+.DS_Store
+config/database.yml
+config/environment.yml
+config/heroku_env.rb
+db/*.sqlite3
+.*.swp
+tmp/restart.txt
+public/system
+.rake_tasks*
+.rvmrc
+config/initializers/local*.rb
