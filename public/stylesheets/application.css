@@ -22,7 +22,9 @@ div#form_container input.text_input {
 	padding:5px;
 	background-color:white;
 	border:1px solid rgb(190,190,190);
-	width:100%;
+	width:570px;
+	outline:none;
+	margin-bottom:10px;
 }
 div#form_container input.text_input:focus {
 	
@@ -32,4 +34,5 @@ div#form_container label {
 }
 div#form_container input.button_input {
 	float:right;
+	margin-top:10px;
 }
