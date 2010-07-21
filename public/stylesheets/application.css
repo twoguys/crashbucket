@@ -5,7 +5,8 @@ body {
 	font-family:helvetica;
 	font-size:15px;
 	background-color:rgb(55,55,55);
-	background-image:transparent url(/images/body.png) repeat-x;
+	background-image:url(/images/body.jpg);
+	background-repeat:repeat-x;
 }
 div.clear {
 	clear:both;
