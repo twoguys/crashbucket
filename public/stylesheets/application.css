@@ -4,6 +4,9 @@ body {
 	font-family:helvetica;
 	font-size:15px;
 }
+div.clear {
+	clear:both;
+}
 
 div#form_container {
 	width:500px;
@@ -11,8 +14,14 @@ div#form_container {
 	background-color:rgb(240,240,240);
 	border:1px solid rgb(190,190,190);
 }
+div#form_container h2 {
+	text-align:center;
+}
 div#form_container input.text_input {
 	padding:5px;
 	background-color:white;
 	border:1px solid rgb(190,190,190);
+}
+div#form_container input.button_input {
+	float:right;
 }
