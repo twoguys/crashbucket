@@ -1,0 +1,10 @@
+%h1 Create an app
+
+= form_for @app do |form|
+  %fieldset
+    %ul
+      %li
+        = form.label :name
+        = form.text_field :name
+      %li.submit
+        = form.submit "Create App"

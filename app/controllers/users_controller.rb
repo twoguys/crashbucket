@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      redirect_to root_path, :notice => "Thank you for signing up"
+      redirect_to apps_path, :notice => "Thank you for signing up"
     else
       render :action => 'new'
     end

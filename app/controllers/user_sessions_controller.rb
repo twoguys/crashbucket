@@ -1,7 +1,7 @@
 class UserSessionsController < ApplicationController
 
   def new
-    redirect_to root_path if current_user
+    redirect_to apps_path if current_user
     @user_session = UserSession.new
   end
 
@@ -9,7 +9,7 @@ class UserSessionsController < ApplicationController
   def create  
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save     
-      redirect_to root_path, :notice => "Welcome back!"
+      redirect_to apps_path, :notice => "Welcome back!"
     else
       flash[:alert] = "Invalid login, please check your username and password"
       render :action => 'new'
