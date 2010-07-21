@@ -1,0 +1,18 @@
+body {
+	color:rgb(30,30,30);
+	margin:0px;
+	font-family:helvetica;
+	font-size:15px;
+}
+
+div#form_container {
+	width:500px;
+	margin:100px auto;
+	background-color:rgb(240,240,240);
+	border:1px solid rgb(190,190,190);
+}
+div#form_container input.text_input {
+	padding:5px;
+	background-color:white;
+	border:1px solid rgb(190,190,190);
+}
