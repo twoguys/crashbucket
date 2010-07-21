@@ -12,6 +12,12 @@ Crashreportapp::Application.routes.draw do |map|
     resources :reports
   end
   
+  namespace :api do
+    resources :apps do
+      resources :reports
+    end
+  end
+  
   match '/'         => 'user_sessions#new',              :as => 'root'
   
   # The priority is based upon order of creation:

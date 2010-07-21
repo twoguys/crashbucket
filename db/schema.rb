@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100720215200) do
+ActiveRecord::Schema.define(:version => 20100721034102) do
 
   create_table "apps", :force => true do |t|
     t.string   "name"
@@ -25,7 +25,10 @@ ActiveRecord::Schema.define(:version => 20100720215200) do
     t.text     "raw"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "app_id"
   end
+
+  add_index "reports", ["app_id"], :name => "index_reports_on_app_id"
 
   create_table "users", :force => true do |t|
     t.string   "email"

@@ -1,12 +1,12 @@
 class App < ActiveRecord::Base
 
-  belongs_to :user
-  #has_many :reports
+  belongs_to            :user
+  has_many              :reports
 
   validates_presence_of :name
 
 
-  before_create :create_api_key
+  before_create         :create_api_key
   
   
   def create_api_key
