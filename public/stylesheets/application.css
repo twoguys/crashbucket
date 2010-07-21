@@ -4,7 +4,7 @@ body {
 	margin:0px;
 	font-family:helvetica;
 	font-size:15px;
-	background-color:rgb(55,55,55);
+	/* background-color:rgb(55,55,55); */
 	background-image:transparent url(/images/body.png) repeat-x;
 }
 div.clear {
