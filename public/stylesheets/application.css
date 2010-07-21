@@ -13,6 +13,7 @@ div#form_container {
 	margin:100px auto;
 	background-color:rgb(240,240,240);
 	border:1px solid rgb(190,190,190);
+	padding:10px;
 }
 div#form_container h2 {
 	text-align:center;
@@ -21,6 +22,13 @@ div#form_container input.text_input {
 	padding:5px;
 	background-color:white;
 	border:1px solid rgb(190,190,190);
+	width:100%;
+}
+div#form_container input.text_input:focus {
+	
+}
+div#form_container label {
+	padding-left:7px;
 }
 div#form_container input.button_input {
 	float:right;
