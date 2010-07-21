@@ -2,5 +2,14 @@
 
 = link_to "New App", new_app_path
 
-%ul
-  = render @apps
+%table
+	%tr
+		%th name
+		%th new reports
+		%th api key
+	- @apps.each do |app|
+		%tr
+			%th
+				= app.name
+			%th
+			%th

@@ -1,10 +1,11 @@
-%h1 Create an app
+#form_container
+	%h2 New App
 
-= form_for @app do |form|
-  %fieldset
-    %ul
-      %li
-        = form.label :name
-        = form.text_field :name
-      %li.submit
-        = form.submit "Create App"
+	= form_for @app do |form|
+		= form.label :name
+		%br/
+		= form.text_field :name, :class => "text_input"
+		%br/
+		= form.submit "Create App", :class => "button_input"
+	
+	.clear

@@ -1,9 +1,9 @@
 Crashreportapp::Application.routes.draw do |map|
 
-  # Signin, Signout
-  match 'signin'    => 'user_sessions#new',       :as => :signin  
-  match 'signout'   => 'user_sessions#destroy',   :as => :signout
-  match 'signup'    => 'users#new',               :as => :signup
+  # session routes
+  match 'login'   =>  'user_sessions#new',      :as => :login  
+  match 'logout'  =>  'user_sessions#destroy',  :as => :logout
+  match 'signup'  =>  'users#new',              :as => :signup
   
   resources :users
   resources :user_sessions
@@ -18,7 +18,8 @@ Crashreportapp::Application.routes.draw do |map|
     end
   end
   
-  match '/'         => 'user_sessions#new',              :as => 'root'
+	#root
+  match '/'       => 'user_sessions#new',       :as => 'root'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

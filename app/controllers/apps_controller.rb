@@ -22,7 +22,7 @@ class AppsController < ApplicationController
     @app = current_user.apps.new(params[:app])
     
     if @app.save
-      redirect_to @app, :notice => "App created successfully"
+      redirect_to apps_url, :notice => "App created successfully"
     else
       flash[:alert] = "There was an error creating a new app"
       render :action => 'new'

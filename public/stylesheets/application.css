@@ -58,8 +58,8 @@ div#form_container h2 {
 }
 div#form_container input.text_input {
 	padding:5px;
-	background-color:rgb(240,240,240);
-	border:1px solid rgb(190,190,190);
+	/*background-color:rgb(240,240,240);
+	border:1px solid rgb(190,190,190);*/
 	width:487px;
 	outline:none;
 	margin-bottom:10px;

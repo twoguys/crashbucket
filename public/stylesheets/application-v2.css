@@ -1,0 +1,141 @@
+/* global overrides */
+body {
+	background-color:rgb(51,102,153);
+	color:rgb(35,35,35);
+	margin:0px;
+}
+a {
+	color:rgb(35,35,35);
+}
+a:visited {
+	color:rgb(35,35,35);
+}
+img {
+	border:none;
+}
+div.clear {
+	clear:both;
+}
+
+/* header */
+div#header_container {
+	border-bottom:5px solid rgb(82,139,197);
+	font-family:helvetica;
+	font-size:15px;
+	text-shadow:0px 1px rgba(0,0,0,0.5);
+}
+div#header_content {
+	width:960px;
+	margin:0px auto;
+	padding:10px 0px 15px 0px;
+}
+div#header_content,
+div#header_content a,
+div#header_content a:visited {
+	color:white;
+	text-decoration:none;
+}
+h1#site_title {
+	float:left;
+	font-size:40px;
+	margin:0px;
+}
+ul#site_links,
+ul#user_links {
+	margin:24px 0px 0px 5px;
+	padding:0px;
+	float:right;
+	list-style:none;
+}
+ul#site_links li,
+ul#user_links li {
+	display:inline;
+	margin-left:10px;
+}
+
+/* main content */
+div#main_container {
+	background-color:white;
+	font-family:verdana;
+	font-size:14px;
+	line-height:20px;
+	padding:20px 0px;
+}
+div#main_content {
+	width:960px;
+	margin:0px auto;
+}
+
+/* footer */
+div#footer_container {
+	border-top:5px solid rgb(82,139,197);
+	font-family:helvetica;
+	font-size:15px;
+	text-shadow:0px 1px rgba(0,0,0,0.5);
+}
+div#footer_container p {
+  text-align:center;
+}
+div#footer_content,
+div#footer_content a,
+div#footer_content a:visited {
+	color:white;
+}
+div#footer_content {
+	width:960px;
+	margin:0px auto;
+}
+p#copyright {
+	margin:18px 0px 20px 0px;
+	float:left;
+}
+ul#social_links {
+	margin:18px 0px 20px 0px;
+	float:right;
+}
+ul#social_links li {
+	display:inline;
+	margin-right:10px;
+}
+
+/* code blocks */
+div.code {
+	font-size:12px;
+	margin:10px;
+	padding:10px;
+	border:solid 1px rgb(192,192,192);
+	background-color:rgb(240,240,240);
+	color:black;
+}
+
+/* form */
+div#form_container {
+  width:500px;
+  margin:150px auto;
+}
+div#form_container h2 {
+  text-align:center;
+}
+div#form_container label {
+  margin-left:7px;
+}
+div#form_container input.text_input {
+  margin-bottom:10px;
+  font-size:18px;
+  padding:5px;
+  outline:none;
+  background-color:rgb(250,250,250);
+	border:1px solid rgb(190,190,190);
+	width:490px;
+}
+div#form_container .field_with_errors,
+div#form_container .fieldWithErrors {
+  display:inline;
+}
+div#form_container input.text_input:focus {
+  
+}
+div#form_container input.button_input {
+  margin-top:10px;
+  float:right;
+}
