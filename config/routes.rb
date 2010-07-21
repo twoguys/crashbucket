@@ -12,8 +12,7 @@ Crashreportapp::Application.routes.draw do |map|
     resources :reports
   end
   
-  
-  match '/'         => 'users#new',              :as => 'root'
+  match '/'         => 'user_sessions#new',              :as => 'root'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
