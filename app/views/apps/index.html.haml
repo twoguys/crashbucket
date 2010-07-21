@@ -3,13 +3,13 @@
 = link_to "New App", new_app_path
 
 %table
-	%tr
-		%th name
-		%th new reports
+	%tr{ :id => "table_header" }
+		%th{:class => "first" } name
 		%th api key
+		%th{:class => "last" } new reports
 	- @apps.each do |app|
-		%tr
-			%th
+		%tr{ :class => "table_row" }
+			%td{:class => "table_col_name" }
 				= app.name
-			%th
-			%th
+			%td{:class => "table_col_key" }
+			%td{:class => "table_col_reports" }
