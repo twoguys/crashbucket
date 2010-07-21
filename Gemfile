@@ -7,7 +7,8 @@ gem 'haml',       '3.0.13'
 
 group :development do
   gem "mongrel"
-  gem 'mysql'
+  gem 'sqlite3-ruby', :require => 'sqlite3'
+  #gem 'mysql'
 end
 
 # Bundle edge Rails instead:
