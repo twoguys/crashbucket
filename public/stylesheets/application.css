@@ -5,20 +5,13 @@ body {
 	font-family:helvetica;
 	font-size:15px;
 	background-color:rgb(55,55,55);
+	background-image:transparent url(/images/body.png) repeat-x;
 }
 div.clear {
 	clear:both;
 }
 
-/* upper half */
-div#upper {
-	background-color:rgb(20,20,20);
-	width:100%;
-	border-bottom:1px solid rgb(115,115,115);
-	height:200px;
-	display:inline;
-}
-
+/* form */
 div#form_container {
 	width:500px;
 	margin:100px auto;
