@@ -9,6 +9,10 @@ class App < ActiveRecord::Base
   before_create         :create_api_key
   
   
+  def to_param
+    "#{id} #{name}".slugify
+  end
+  
   def create_api_key
     self.api_key = Digest::SHA1.hexdigest(Time.now.to_s + rand(12341234).to_s)
   end
