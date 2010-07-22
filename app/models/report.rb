@@ -17,6 +17,6 @@ class Report < ActiveRecord::Base
   
   def generate_fingerprint
     self.fingerprint = Digest::MD5.hexdigest("#{self.exc_name}#{self.backtrace}") unless self.fingerprint
-  end  def self.per_page; 10; end
+  end
   
 end
