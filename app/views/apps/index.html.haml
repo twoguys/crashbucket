@@ -1,6 +1,6 @@
-%h1 Apps
+-#%h1 Apps
 
-= link_to "New App", new_app_path
+= #link_to "New App", new_app_path
 
 %table
 	%tr{ :id => "table_header" }
@@ -12,4 +12,5 @@
 			%td{:class => "table_col_name" }
 				= app.name
 			%td{:class => "table_col_key" }
+				= app.api_key
 			%td{:class => "table_col_reports" }
