@@ -3,7 +3,7 @@ class ReportsController < ApplicationController
   before_filter :find_app
   
   def index
-    @reports = @app.reports
+    @reports = @app.reports.paginate(:page => params[:page])
   end
   
   def show

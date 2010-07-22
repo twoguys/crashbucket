@@ -13,9 +13,10 @@ class Report < ActiveRecord::Base
   
   before_create :generate_fingerprint
   
+  def self.per_page; 10; end  
   
   def generate_fingerprint
     self.fingerprint = Digest::MD5.hexdigest("#{self.exc_name}#{self.backtrace}") unless self.fingerprint
-  end
+  end  def self.per_page; 10; end
   
 end

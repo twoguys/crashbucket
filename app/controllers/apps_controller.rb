@@ -3,7 +3,7 @@ class AppsController < ApplicationController
   before_filter :login_required
   
   def index
-    @apps = current_user.apps
+    @apps = current_user.apps.paginate(:page => params[:page])
   end
   
   def show

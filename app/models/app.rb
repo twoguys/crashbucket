@@ -1,5 +1,5 @@
 class App < ActiveRecord::Base
-
+  
   belongs_to            :user
   has_many              :reports
 
@@ -8,6 +8,7 @@ class App < ActiveRecord::Base
 
   before_create         :create_api_key
   
+  def self.per_page; 10; end
   
   def to_param
     "#{id} #{name}".slugify
