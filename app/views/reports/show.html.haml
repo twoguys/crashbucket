@@ -1,0 +1,10 @@
+%h1= @report.exc_name
+
+%ul
+	%li= @report.exc_reason
+	%li= @report.device
+	%li= @report.os_version
+	%li= @report.app_version
+	%li= @report.count
+
+= @report.backtrace
