@@ -3,8 +3,9 @@ class Api::ReportsController < Api::BaseController
   before_filter :find_app
   
   def create
-    @report = Report.new(params[:report])
-    @app.reports << @report
+    # @report = Report.new(params[:report])
+    # @app.reports << @report
+    head :ok
   end
   
   
