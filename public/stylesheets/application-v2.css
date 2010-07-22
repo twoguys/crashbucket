@@ -75,6 +75,7 @@ div#footer_container {
 }
 div#footer_container p {
 	text-align:center;
+	margin:0px;
 }
 div#footer_content,
 div#footer_content a,
@@ -83,7 +84,7 @@ div#footer_content a:visited {
 }
 div#footer_content {
 	width:960px;
-	margin:0px auto;
+	margin:15px auto;
 }
 p#copyright {
 	margin:18px 0px 20px 0px;
@@ -111,7 +112,7 @@ div.code {
 /* form */
 div#form_container {
 	width:500px;
-	margin:150px auto;
+	margin:125px auto 175px auto;
 }
 div#form_container h2 {
 	text-align:center;
@@ -170,6 +171,10 @@ th.last {
 }
 td, th { padding:10px; }
 td { font-size:13px; }
-td.table_col_name { width:200px; }
-td.table_col_key { width:350px; }
-td.table_col_reports { width:300px; }
+th.app_status { min-width:15px; }
+th.app_name { min-width:200px; }
+th.app_key { min-width:300px; }
+th.app_reports { min-width:300px; }
+th.report_name { min-width:300px; }
+th.report_date { min-width:200px; }
+th.report_count { min-width:200px; }
