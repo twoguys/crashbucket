@@ -4,8 +4,20 @@ class Api::ReportsController < Api::BaseController
   
   def create
     @report = Report.new(params[:report])
-    @app.reports << @report
-    head :ok
+    @report.generate_fingerprint
+    
+    existing_report = @app.reports.find_by_fingerprint(@report.fingerprint)
+    
+    if existing_report
+      existing_report.increment!(:count)
+      head :ok
+    else
+      if @app.reports << @report
+        head :ok
+      else
+        head :not_acceptable
+      end
+    end
   end
   
   
