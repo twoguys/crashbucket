@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100722031110) do
+ActiveRecord::Schema.define(:version => 20100722033740) do
 
   create_table "apps", :force => true do |t|
     t.string   "name"
@@ -32,6 +32,8 @@ ActiveRecord::Schema.define(:version => 20100722031110) do
     t.string   "exc_reason"
     t.string   "library_version"
     t.text     "backtrace"
+    t.integer  "count",           :default => 1
+    t.string   "fingerprint"
   end
 
   add_index "reports", ["app_id"], :name => "index_reports_on_app_id"
