@@ -1,0 +1,16 @@
+%table
+	%tr{ :id => "table_header" }
+		%th{:class => "first" } exc name
+		%th exc reason
+		%th count
+		%th{:class => "last" } created at
+	- @reports.each do |report|
+		%tr{ :class => "table_row" }
+			%td{:class => "table_col_name" }
+				= link_to report.exc_name, [@app, report]
+			%td{:class => "table_col_key" }
+				= report.exc_reason
+			%td{:class => "table_col_key" }
+				= report.count
+			%td{:class => "table_col_reports" }
+				= time_ago_in_words(report.created_at)
