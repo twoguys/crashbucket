@@ -1,1 +1,12 @@
 POST /api/apps/API_KEY/reports
+
+params
+	date
+	os_version
+	device
+	app_version
+	exc_name
+	exc_reason
+	backtrace
+	library_version
+	
