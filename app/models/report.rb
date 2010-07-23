@@ -16,7 +16,13 @@ class Report < ActiveRecord::Base
   def self.per_page; 10; end  
   
   def generate_fingerprint
-    self.fingerprint = Digest::MD5.hexdigest("#{self.exc_name}#{self.backtrace}") unless self.fingerprint
+    digest = Digest::MD5.hexdigest("#{self.exc_name}#{self.backtrace}")
+    digest.gsub!(/0x(.*)[\t\s\n]/, "foo")
+    self.fingerprint = digest unless self.fingerprint
+  end
+  
+  def backtrace_html
+    self.backtrace.gsub(/\n/, "<br />").gsub(/\t/, "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;")
   end
   
 end

@@ -7,4 +7,6 @@
 	%li= @report.app_version
 	%li= @report.count
 
-= @report.backtrace
+%textarea{ :rows => "20", :cols => "100" }
+	= @report.backtrace
+	
