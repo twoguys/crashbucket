@@ -28,7 +28,7 @@ class Api::ReportsController < Api::BaseController
   
   def find_app
     @app = App.where(:api_key => params[:app_id])
-    return head :not_found unless @app
+    render :status => :unauthorized and return unless @app
   end
   
 end
