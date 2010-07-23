@@ -11,8 +11,8 @@ class Report < ActiveRecord::Base
   
   validates_uniqueness_of :fingerprint, :scope => :app_id
   
-  after_initialize :generate_fingerprint
-  #before_create :generate_fingerprint
+  #after_initialize :generate_fingerprint
+  before_create :generate_fingerprint
   
   attr_accessor :bundle_identifier
   
