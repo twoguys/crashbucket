@@ -3,6 +3,7 @@ class UserSessionsController < ApplicationController
   def new
     redirect_to apps_path if current_user
     @user_session = UserSession.new
+    @title = "login"
   end
 
   # FIXME

@@ -3,11 +3,13 @@ class AppsController < ApplicationController
   before_filter :login_required
   
   def index
+    @title = "apps"
     @apps = current_user.apps.paginate(:page => params[:page])
   end
   
   def show
     @app = current_user.apps.find(params[:id])
+    @title = @app.name.downcase
   end
   
   def new

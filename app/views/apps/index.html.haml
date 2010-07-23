@@ -7,10 +7,15 @@
     %th{ :class => "first app_status" }
     %th{ :class => "app_name" } name
     %th{ :class => "app_key" } api key
-    %th{ :class => "last app_reports" } new reports
+    %th{ :class => "last app_reports" } crash reports
   - @apps.each do |app|
     %tr{ :class => "table_row" }
       %td
       %td= link_to app.name, apps_path(app)
       %td= app.api_key
-      %td= app.reports.count
+      %td
+        - count = app.reports.count
+        - if count == 0
+          no reports
+        - else
+          count
