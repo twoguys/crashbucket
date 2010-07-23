@@ -1,15 +1,22 @@
-%h2= @app.name
-%h2= @app.api_key
+%h2{ :style => "margin-left:50px;display:inline;" }= @app.name
+-#%h2= @app.api_key
 
 %table
   %tr{ :id => "table_header" }
-    %th{ :class => "first report_name" } exc_name
+    %th{ :class => "first report_name" } exception name
     %th{ :class => "report_date" } last reported
     %th{ :class => "last report_count" } count
   - @app.reports.each do |report|
     %tr{ :class => "table_row" }
-      %td= report.exc_name
-      %td= report.created_at
-      %td= report.count
+      %td= link_to report.exc_name, [@app, report]
+      %td
+        = time_ago_in_words report.created_at
+        ago
+      %td
+        - count = report.count
+        - if count == 1
+          1 time
+        - else
+          = "#{count} times"
 
 = link_to "Apps", apps_path
