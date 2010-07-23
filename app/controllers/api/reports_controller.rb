@@ -5,32 +5,27 @@ class Api::ReportsController < Api::BaseController
   def create
     @report = Report.new(params[:report])
     @report.generate_fingerprint
+    @report.app = @app
     
-    #existing_report = @app.reports.find_by_fingerprint(@report.fingerprint)
     existing_report = @app.reports.find_by_fingerprint(@report.fingerprint)
     
-    if @report.valid?
-      if existing_report
-        existing_report.increment!(:count)
+    if existing_report
+      existing_report.increment!(:count)
+      head :ok
+    else
+      if @report.save
         head :ok
       else
-        @app.reports << @reports
+        render :json => { :errors => @report.errors }, :status => :not_acceptable # 406
       end
-    else
-      render :json => { :errors => @report.errors }, :status => :not_acceptable # 406
     end
-        
-    # if existing_report
-    #   existing_report.increment!(:count)
+    # if @report.valid?
+    #   existing_report = @app.reports.find_by_fingerprint(@report.fingerprint)
+    #   existing_report ? existing_report.increment!(:count) : @report.save
     #   head :ok
     # else
-    #   if @app.reports << @report
-    #     head :ok
-    #   else
-    #     render :json => { :errors => @report.errors }, :status => :not_acceptable # 406
-    #   end
+    #   render :json => { :errors => @report.errors }, :status => :not_acceptable # 406
     # end
-
   end
   
   
