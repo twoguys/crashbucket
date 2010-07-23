@@ -19,4 +19,8 @@ class Report < ActiveRecord::Base
     self.fingerprint = Digest::MD5.hexdigest("#{self.exc_name}#{self.backtrace}") unless self.fingerprint
   end
   
+  def backtrace_html
+    self.backtrace.gsub(/\n/, "<br />").gsub(/\t/, "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;").html_safe!
+  end
+  
 end
