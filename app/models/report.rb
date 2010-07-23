@@ -13,6 +13,8 @@ class Report < ActiveRecord::Base
   
   before_create :generate_fingerprint
   
+  attr_accessor :bundle_identifier
+  
   def self.per_page; 10; end  
   
   def generate_fingerprint

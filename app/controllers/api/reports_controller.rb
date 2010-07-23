@@ -6,16 +6,18 @@ class Api::ReportsController < Api::BaseController
     @report = Report.new(params[:report])
     @report.generate_fingerprint
     
-    existing_report = @app.reports.find_by_fingerprint(@report.fingerprint)
+    #existing_report = @app.reports.find_by_fingerprint(@report.fingerprint)
+    existing_report = @app.reports.where(:fingerprint => @report.fingerprint)
     
-    if existing_report
+    if @app.bundle_identifer != @report.bundle_identifer
+      head :conflict
+    elsif existing_report
       existing_report.increment!(:count)
       head :ok
     else
       if @app.reports << @report
         head :ok
       else
-        #head :not_acceptable
         render :json => { :errors => @report.errors }, :status => :not_acceptable # 406
       end
     end
@@ -25,7 +27,7 @@ class Api::ReportsController < Api::BaseController
   private
   
   def find_app
-    @app = App.find_by_api_key(params[:app_id])
+    @app = App.where(:api_key => params[:app_id])
   end
   
 end
