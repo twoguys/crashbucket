@@ -6,6 +6,10 @@
 		%br/
 		= form.text_field :name, :class => "text_input"
 		%br/
+		= form.label :bundle_identifier
+		%br/
+		= form.text_field :bundle_identifier, :class => "text_input"
+		%br/
 		= form.submit "Create App", :class => "button_input"
 	
 	.clear
