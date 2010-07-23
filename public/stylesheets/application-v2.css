@@ -64,6 +64,7 @@ div#main_container {
 div#main_content {
 	width:960px;
 	margin:0px auto;
+	min-height:400px;
 }
 
 /* footer */
@@ -112,7 +113,7 @@ div.code {
 /* form */
 div#form_container {
 	width:500px;
-	margin:125px auto 175px auto;
+	margin:125px auto 0px auto;
 }
 div#form_container h2 {
 	text-align:center;
@@ -127,7 +128,7 @@ div#form_container input.text_input {
 	outline:none;
 	background-color:rgb(250,250,250);
 	border:1px solid rgb(190,190,190);
-	width:490px;
+	width:495px;
 }
 div#form_container .field_with_errors,
 div#form_container .fieldWithErrors {
@@ -146,6 +147,7 @@ table {
 	margin:15px auto;
 	border-spacing:0px;
 	text-align:left;
+	width:800px;
 }
 tr#table_header {
 	background-color:rgb(250,250,250);
@@ -154,6 +156,7 @@ tr#table_header {
 th {
 	border-top:1px solid rgb(200,200,200);
 	border-bottom:1px solid rgb(200,200,200);
+	padding:5px 10px;
 }
 th.first {
 	border-left:1px solid rgb(200,200,200);
@@ -169,12 +172,14 @@ th.last {
 	-moz-border-radius-topright:5px;
 	-moz-border-radius-bottomright:5px;
 }
-td, th { padding:10px; }
-td { font-size:13px; }
+td {
+  font-size:13px;
+  padding:10px;
+  }
 th.app_status { min-width:15px; }
 th.app_name { min-width:200px; }
-th.app_key { min-width:300px; }
-th.app_reports { min-width:300px; }
+th.app_key { min-width:375px; }
+th.app_reports { min-width:200px; }
 th.report_name { min-width:300px; }
-th.report_date { min-width:200px; }
-th.report_count { min-width:200px; }
+th.report_date { min-width:300px; }
+th.report_count { min-width:210px; }

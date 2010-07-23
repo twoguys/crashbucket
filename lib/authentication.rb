@@ -12,7 +12,7 @@ module Authentication
         render :file => "#{RAILS_ROOT}/public/401.html", :status => :unauthorized 
       end
     else
-      redirect_to signin_path
+      redirect_to login_path
     end
   end
   

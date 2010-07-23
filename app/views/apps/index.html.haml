@@ -1,7 +1,7 @@
-%h2 Apps
-
-= #link_to "New App", new_app_path
-
+%h2{ :style => "margin-left:50px;display:inline;" } Apps
+:plain
+  &nbsp;&bull;&nbsp;
+= link_to "New App", new_app_path
 %table
   %tr{ :id => "table_header" }
     %th{ :class => "first app_status" }
@@ -17,5 +17,7 @@
         - count = app.reports.count
         - if count == 0
           no reports
+        - elsif count == 1
+          1 report
         - else
-          count
+          = "#{count} reports"
