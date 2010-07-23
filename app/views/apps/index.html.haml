@@ -11,6 +11,6 @@
   - @apps.each do |app|
     %tr{ :class => "table_row" }
       %td
-      %td= link_to app.name, apps_path(app)
+      %td= link_to app.name, app
       %td= app.api_key
       %td= app.reports.count
