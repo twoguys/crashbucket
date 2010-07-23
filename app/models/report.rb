@@ -17,7 +17,7 @@ class Report < ActiveRecord::Base
   
   def generate_fingerprint
     digest = Digest::MD5.hexdigest("#{self.exc_name}#{self.backtrace}")
-    digest.gsub!(/0x(.*)[\t\s\n]/, "foo")
+    digest.gsub!(/0x(.*)[\t\s\n]/, "")
     self.fingerprint = digest unless self.fingerprint
   end
   
