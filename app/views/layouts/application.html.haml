@@ -10,17 +10,21 @@
         %h1{ :id => "site_title" } libcrashreport
         %ul{ :id => "site_links"}
           - if current_user
-            %li= link_to(current_user.email, apps_path)
             %li= link_to "log out", logout_path
           - else
             %li= link_to "log in", login_path
         .clear
+    = yield :breadcrumb
     #main_container
       #main_content
         = yield
         .clear
     #footer_container
       #footer_content
+        - if request.user_agent.include? "MSIE"
+          %p{ :style => "margin-bottom:10px;" }
+            get a
+            %a{ :href => "http://abetterbrowser.org" } better browser
         %p
           this is a
           %a{ :href => "http://guicocoa.com" } gui cocoa

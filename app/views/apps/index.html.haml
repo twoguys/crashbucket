@@ -1,18 +1,23 @@
-%h2{ :style => "margin-left:50px;display:inline;" } Apps
-:plain
-  &nbsp;&bull;&nbsp;
-= link_to "New App", new_app_path
+= content_for :breadcrumb do
+  #breadcrumb_container
+    #breadcrumb_content
+      %span= current_user.email
+      :plain
+        &nbsp;&bull;&nbsp;
+      %span apps
+= #link_to "New App", new_app_path, :style => "margin-left:80px;"
+%h2{ :style => "margin-left:90px;display:inline;" } Apps
 %table
   %tr{ :id => "table_header" }
     %th{ :class => "first app_status" }
     %th{ :class => "app_name" } name
-    %th{ :class => "app_key" } api key
+    %th{ :class => "app_key" } identifier
     %th{ :class => "last app_reports" } crash reports
   - @apps.each do |app|
     %tr{ :class => "table_row" }
       %td
       %td= link_to app.name, app
-      %td= app.api_key
+      %td= app.bundle_identifier
       %td
         - count = app.reports.count
         - if count == 0

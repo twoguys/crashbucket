@@ -1,6 +1,14 @@
-%h2{ :style => "margin-left:50px;display:inline;" }= @app.name
--#%h2= @app.api_key
-
+= content_for :breadcrumb do
+  #breadcrumb_container
+    #breadcrumb_content
+      %span= current_user.email
+      :plain
+        &nbsp;&bull;&nbsp;
+      %span= link_to "apps", apps_path
+      :plain
+        &nbsp;&bull;&nbsp;
+      %span= @app.name.downcase
+%h2{ :style => "margin-left:53px;display:inline;" }= @app.name
 %table
   %tr{ :id => "table_header" }
     %th{ :class => "first report_name" } exception name
@@ -18,5 +26,3 @@
           1 time
         - else
           = "#{count} times"
-
-= link_to "Apps", apps_path
