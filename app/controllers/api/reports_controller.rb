@@ -27,8 +27,8 @@ class Api::ReportsController < Api::BaseController
   private
   
   def find_app
-    @app = App.where(:api_key => params[:app_id])
-    render :status => :forbidden and return unless @app
+    @app = App.find_by_api_key(params[:api_key])
+    head :forbidden and return unless @app
   end
   
 end
