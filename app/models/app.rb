@@ -4,7 +4,7 @@ class App < ActiveRecord::Base
   has_many              :reports
 
   validates_presence_of :name
-
+  validates_presence_of :bundle_identifier
 
   before_create         :create_api_key
   
