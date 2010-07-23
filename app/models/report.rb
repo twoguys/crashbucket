@@ -20,7 +20,7 @@ class Report < ActiveRecord::Base
   end
   
   def backtrace_html
-    self.backtrace.gsub(/\n/, "<br />").gsub(/\t/, "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;").html_safe!
+    self.backtrace.gsub(/\n/, "<br />").gsub(/\t/, "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;")
   end
   
 end
