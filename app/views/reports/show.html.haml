@@ -10,4 +10,4 @@
 - convertor = Syntax::Convertors::HTML.for_syntax "text"
 
 %div.backtrace
-	= convertor.convert("\t  #{@report.backtrace}").html_safe
+	= convertor.convert("#{@report.backtrace}").html_safe
