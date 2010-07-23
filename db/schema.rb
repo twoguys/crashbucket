@@ -12,41 +12,41 @@
 ActiveRecord::Schema.define(:version => 20100723150926) do
 
   create_table "apps", :force => true do |t|
-    t.string   "name"
-    t.string   "api_key"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "bundle_identifier"
+    t.string    "name"
+    t.string    "api_key"
+    t.integer   "user_id"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.string    "bundle_identifier"
   end
 
   add_index "apps", ["user_id"], :name => "index_apps_on_user_id"
 
   create_table "reports", :force => true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "app_id"
-    t.string   "os_version"
-    t.string   "device"
-    t.string   "app_version"
-    t.string   "exc_name"
-    t.string   "exc_reason"
-    t.string   "library_version"
-    t.text     "backtrace"
-    t.integer  "count",           :default => 1
-    t.string   "fingerprint"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.integer   "app_id"
+    t.string    "os_version"
+    t.string    "device"
+    t.string    "app_version"
+    t.string    "exc_name"
+    t.string    "exc_reason"
+    t.string    "library_version"
+    t.text      "backtrace"
+    t.integer   "count",           :default => 1
+    t.string    "fingerprint"
   end
 
   add_index "reports", ["app_id"], :name => "index_reports_on_app_id"
 
   create_table "users", :force => true do |t|
-    t.string   "email"
-    t.string   "crypted_password"
-    t.string   "password_salt"
-    t.string   "persistence_token"
-    t.string   "perishable_token",  :default => "", :null => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "email"
+    t.string    "crypted_password"
+    t.string    "password_salt"
+    t.string    "persistence_token"
+    t.string    "perishable_token",  :default => "", :null => false
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   add_index "users", ["perishable_token"], :name => "index_users_on_perishable_token"
