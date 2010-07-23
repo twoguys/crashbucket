@@ -16,7 +16,7 @@ class Api::ReportsController < Api::BaseController
         head :ok
       else
         #head :not_acceptable
-        render :json => { :errors => @report.errors }, :status => 406
+        render :json => { :errors => @report.errors }, :status => :not_acceptable # 406
       end
     end
   end
