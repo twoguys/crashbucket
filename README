@@ -10,3 +10,7 @@ params
 	backtrace
 	library_version
 	
+200 OK!
+403 Forbidden
+409 Conflict
+	

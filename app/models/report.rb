@@ -26,4 +26,8 @@ class Report < ActiveRecord::Base
     self.backtrace.gsub(/\n/, "<br />").gsub(/\t/, "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;")
   end
   
+  def validate
+    errors.add(:bundle_identifier, "is invalid") unless app.bundle_identifier == self.bundle_identifier
+  end
+  
 end
