@@ -16,6 +16,7 @@ class Api::ReportsController < Api::BaseController
         head :ok
       else
         head :not_acceptable
+        render :json => { :errors => @report.errors }.to_json
       end
     end
   end
