@@ -5,6 +5,7 @@ class Api::ReportsController < Api::BaseController
   def create
     @report = Report.new(params[:report])
     @report.generate_fingerprint
+    @report.app = @app
     
     if @report.valid?
       existing_report = @app.reports.find_by_fingerprint(@report.fingerprint)
@@ -12,7 +13,8 @@ class Api::ReportsController < Api::BaseController
         existing_report.increment!(:count)
         head :ok
       else
-        @app.reports << @reports
+        #@app.reports << @reports
+        @report.save
       end
     else
       render :json => { :errors => @report.errors }, :status => :not_acceptable # 406
