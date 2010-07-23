@@ -28,7 +28,7 @@ class Api::ReportsController < Api::BaseController
   
   def find_app
     @app = App.where(:api_key => params[:app_id])
-    head :not_found and return unless @app
+    return head :not_found unless @app
   end
   
 end
