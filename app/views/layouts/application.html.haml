@@ -1,39 +1,36 @@
 %html
-	%head
-		%title Crash Report App
-		= stylesheet_link_tag "application-v2"
-		= javascript_include_tag :defaults
-		= csrf_meta_tag
-		= yield :head
-	%body
-		#header_container
-			#header_content
-				%h1{ :id => "site_title" } site title
-				%ul{ :id => "site_links"}
-					- if current_user
-						%li
-							= link_to(current_user.email, apps_path)
-						%li
-							= link_to "log out", logout_path
-					- else
-						%li
-							= link_to "log in", login_path
-						%li
-							= link_to "sign up", new_user_path
-				.clear
-		#main_container
-			#main_content
-				= yield
-				.clear
-		#footer_container
-			#footer_content
-				%p
-					this is a
-					%a{ :href => "http://guicocoa.com" } gui cocoa
-					and
-					%a{ :href => "http://weretwoguys.com" } two guys
-					project
-				%p
-					copyright ©
-					= Time.now.year
-				.clear
+  %head
+    %title Crash Report App
+    = stylesheet_link_tag "application-v2"
+    = csrf_meta_tag
+    = yield :head
+  %body
+    #header_container
+      #header_content
+        %h1{ :id => "site_title" } site title
+        %ul{ :id => "site_links"}
+          - if current_user
+            %li
+              = link_to(current_user.email, apps_path)
+            %li
+              = link_to "log out", logout_path
+          - else
+            %li
+              = link_to "log in", login_path
+        .clear
+    #main_container
+      #main_content
+        = yield
+        .clear
+    #footer_container
+      #footer_content
+        %p
+          this is a
+          %a{ :href => "http://guicocoa.com" } gui cocoa
+          and
+          %a{ :href => "http://weretwoguys.com" } two guys
+          project
+        %p
+          copyright ©
+          = Time.now.year
+        .clear
