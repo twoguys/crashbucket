@@ -3,12 +3,12 @@
 
 %table
   %tr{ :id => "table_header" }
-    %th{ :class => "first report_name" } name
+    %th{ :class => "first report_name" } exc_name
     %th{ :class => "report_date" } last reported
     %th{ :class => "last report_count" } count
   - @app.reports.each do |report|
     %tr{ :class => "table_row" }
-      %td= report.name
+      %td= report.exc_name
       %td= report.modified_at
       %td= report.count
 
