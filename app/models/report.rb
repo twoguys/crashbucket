@@ -1,5 +1,5 @@
 class Report < ActiveRecord::Base
-  belongs_to :app
+  belongs_to :app, :counter_cache => true  
   
   validates_presence_of :os_version
   validates_presence_of :device
