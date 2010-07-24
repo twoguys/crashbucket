@@ -21,11 +21,5 @@
     %th{ :class => "first report_name" } exception name
     %th{ :class => "report_date" } last reported
     %th{ :class => "last report_count" } count
-  - @app.reports.each do |report|
-    %tr{ :class => "table_row" }
-      %td= link_to report.exc_name, [@app, report]
-      %td
-        = time_ago_in_words report.updated_at
-        ago
-      %td
-        = pluralize(@app.reports_count, "time")
+  = render @app.reports
+    

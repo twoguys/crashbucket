@@ -28,6 +28,10 @@
     %strong app version:
     = @report.app_version
   %li
+    %strong last reported:
+    = time_ago_in_words @report.updated_at
+    ago
+  %li
     %strong count:
     = @report.count
 %span
