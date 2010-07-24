@@ -22,10 +22,12 @@
   %body
     #header_container
       #header_content
-        %h1{ :id => "site_title" } crash bucket
+        %h1{ :id => "site_title" }
+          %a= link_to "crash bucket", root_path
         %ul{ :id => "site_links"}
           %li= link_to "terms", terms_path
           - if current_user
+            %li= link_to "my apps", apps_path
             %li= link_to "log out", logout_path
           - else
             %li= link_to "log in", login_path

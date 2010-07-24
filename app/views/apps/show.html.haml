@@ -9,6 +9,13 @@
         &nbsp;&bull;&nbsp;
       %span= @app.name.downcase
 %h2{ :style => "margin-left:53px;display:inline;" }= @app.name
+%ul{ :style => "list-style:none;padding:0px;margin-bottom:0px;margin-left:53px;" }
+  %li
+    %strong identifier
+    = @app.bundle_identifier
+  %li
+    %strong api key:
+    = @app.api_key
 %table
   %tr{ :id => "table_header" }
     %th{ :class => "first report_name" } exception name

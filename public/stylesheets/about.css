@@ -9,8 +9,8 @@ div#main_container p {
   margin:0px;
 }
 div#info_sections {
-	width:800px;
-	margin:0px auto;
+	width:790px;
+	float:left;
 }
 div#info_sections h2 {
 	margin-top:0px;
@@ -23,11 +23,11 @@ div#drawer {
 div#slider {
 	width:160px;
 	position:fixed;
-	top:200px;
+	top:100px;
 	text-align:center;
 	padding:10px 0px;
-	background-color:#F0F0F0;
-	border:1px solid silver;
+	background-color:rgb(250,250,250);
+	border:1px solid rgb(200,200,200);
 }
 div#slider h2 {
 	font-size:18px;
