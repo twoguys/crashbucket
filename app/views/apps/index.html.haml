@@ -13,16 +13,6 @@
     %th{ :class => "app_name" } name
     %th{ :class => "app_key" } api key
     %th{ :class => "last app_reports" } crash reports
-  - @apps.each do |app|
-    %tr{ :class => "table_row" }
-      %td
-      %td= link_to app.name, app
-      %td= app.api_key
-      %td
-        - count = app.reports.count
-        - if count == 0
-          no reports
-        - elsif count == 1
-          1 report
-        - else
-          = "#{count} reports"
+    = render @apps
+
+= will_paginate @apps
