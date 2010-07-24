@@ -1,26 +1,46 @@
 %html
   %head
-    %title libcrashreport &bull; #{@title}
+    %title 
+      - if @title
+        crash bucket &bull; #{@title}
+        - else
+        crash bucket
     = stylesheet_link_tag "application-v2"
     = csrf_meta_tag
     = yield :head
+    - if ENV['RAILS_ENV'] == 'production'
+      :javascript
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-8680486-5']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
   %body
     #header_container
       #header_content
-        %h1{ :id => "site_title" } libcrashreport
+        %h1{ :id => "site_title" } crash bucket
         %ul{ :id => "site_links"}
+          %li= link_to "terms", terms_path
           - if current_user
-            %li= link_to(current_user.email, apps_path)
             %li= link_to "log out", logout_path
           - else
             %li= link_to "log in", login_path
         .clear
+    = yield :breadcrumb
     #main_container
       #main_content
         = yield
         .clear
     #footer_container
       #footer_content
+        - if request.user_agent.include? "MSIE"
+          %p{ :style => "margin-bottom:10px;" }
+            get a
+            %a{ :href => "http://abetterbrowser.org" } better browser
         %p
           this is a
           %a{ :href => "http://guicocoa.com" } gui cocoa
