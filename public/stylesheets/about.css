@@ -1,6 +1,16 @@
+div#main_container {
+  font-size:13px;
+  font-family:helvetica;
+}
+div#main_container h2 {
+  margin-bottom:10px;
+}
+div#main_container p {
+  margin:0px;
+}
 div#info_sections {
-	width:790px;
-	margin-right:10px;
+	width:800px;
+	margin:0px auto;
 }
 div#info_sections h2 {
 	margin-top:0px;
