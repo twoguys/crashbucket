@@ -1,0 +1,30 @@
+div#info_sections {
+	width:790px;
+	margin-right:10px;
+}
+div#info_sections h2 {
+	margin-top:0px;
+}
+div#drawer {
+	width:160px;
+	float:right;
+	height:100%;
+}
+div#slider {
+	width:160px;
+	position:fixed;
+	top:200px;
+	text-align:center;
+	padding:10px 0px;
+	background-color:#F0F0F0;
+	border:1px solid silver;
+}
+div#slider h2 {
+	font-size:18px;
+	margin:7px 0px;
+	padding:0px;
+}
+div#slider p {
+	font-size:13px;
+	margin:0px;
+}

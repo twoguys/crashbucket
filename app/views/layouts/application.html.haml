@@ -1,6 +1,10 @@
 %html
   %head
-    %title libcrashreport &bull; #{@title}
+    %title 
+      - if @title
+        crash bucket &bull; #{@title}
+        - else
+        crash bucket
     = stylesheet_link_tag "application-v2"
     = csrf_meta_tag
     = yield :head
@@ -18,8 +22,9 @@
   %body
     #header_container
       #header_content
-        %h1{ :id => "site_title" } libcrashreport
+        %h1{ :id => "site_title" } crash bucket
         %ul{ :id => "site_links"}
+          %li= link_to "terms", terms_path
           - if current_user
             %li= link_to "log out", logout_path
           - else

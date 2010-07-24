@@ -4,6 +4,8 @@ Crashreportapp::Application.routes.draw do |map|
   match 'login'   =>  'user_sessions#new',      :as => :login  
   match 'logout'  =>  'user_sessions#destroy',  :as => :logout
   match 'signup'  =>  'users#new',              :as => :signup
+  match 'about'   =>  'pages#about',            :as => :about
+  match 'terms'   =>  'pages#terms',            :as => :terms
   
   resources :users
   resources :user_sessions
@@ -19,7 +21,7 @@ Crashreportapp::Application.routes.draw do |map|
   end
   
 	#root
-  match '/'       => 'user_sessions#new',       :as => 'root'
+  match '/'       => 'pages#about',       :as => 'root'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

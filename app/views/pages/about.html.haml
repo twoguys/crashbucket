@@ -1,0 +1,36 @@
+= content_for :head do
+  = stylesheet_link_tag "apps"
+
+.info_sections
+
+  %div{ :style => "margin-bottom:30px;" }
+    %h2 How do you use it?
+    %p{ :style => "margin:0px;" } &bull; Include <code>GCCrashReport.h</code> and <code>libcrashreport.a</code> in your project
+    %p{ :style => "margin:0px;" } &bull; Include the SystemConfiguration framework in your project
+    %p{ :style => "margin:0px;" } &bull; Copy the following line into your <code>application:didFinishLaunchingWithOptions:</code></p>
+    .code
+      %code [<span style="color:#400080;">GCCrashReport beginWatchingforCrashesWithAPIKey</span>:<span style="color:#C86A59;">&lt;# your api key #&gt;</span> <span style="color:#400080;">delegate</span>:<span style="color:#A61390;">self</span>];
+    .clear
+    
+  %div{ :style => "margin-bottom:30px;" }
+    = image_tag "crash.png", :alt => "Crash Report", :width => "128", :height => "128", :style => "float:left;margin-top:40px;"
+    %h2{ :style => "margin-left:150px;margin-right:150px;" } How do you use it?
+    %p{ :style => "margin-left:150px;margin-right:150px;" } libcrashreport is a library designed to give developers instant crash reports from their app in only one line of code.  When the library is run as part of any iPhone or iPad app, it registers to be notified of all crashes encountered by your app.  Those crashes can range from uncaught exceptions to memory issues caused by that hard to find extra release call (I know we’ve all been there).  It is designed to be simple for the developer to implement and easy for the user interact with.
+    .clear
+    
+  %div{ :style => "margin-bottom:30px;" }
+    = image_tag "iphone.png", :alt => "iPhone 4", :width => "200", :height => "355", :style => "float:right;margin-top:12px;"
+    %h2{ :style => "margin-left:150px;margin-right:225px;" } Why use it?
+    %p{ :style => "margin-left:150px;margin-right:225px;" } The crash reporter built into iTunes Connect has always given me mixed results.  The biggest problem with the system is the delay and frequency with which reports are delivered.  For example, in a recent update to MyGPA, I mistakenly introduced a situation in which an autoreleased object wasn’t retained for use.  I tested the app several times on a phone and in the simulator and never once saw a crash.  Within hours of the application going live I began to receive crash reports indicating a segmentation fault happening in two locations.  I identified the problem two days after the update went live thanks to the instant feedback that libcrashreport provided.  By the time that the fix for the problem went live, I received almost 80 emailed crash reports from the app itself.  I received 0 crash reports from iTunes Connect.  How many of your users as experiencing crashes that you don’t know about?
+    .clear
+  
+  %div{ :style => "margin-bottom:30px;" }
+    = image_tag "alert.png", :alt => "Alert View", :width => "250", :height => "148", :style => "float:left;margin-top:36px;"
+    %h2{ :style => "margin-left:275px;margin-right:100px;" } How does it work?
+    %p{ :style => "margin-left:275px;margin-right:100px;" } Simply include one line in your <code>applicationDidFinishLaunching:withOptions:</code> to start the libcrashreport library up.  From there, the library remains idle until a crash occurs.  It does so with no threads and very little consumed memory.  If your app experiences a crash, a log is saved into a special folder in your app’s directory.  The next time the app is opened, a standard <code>UIAlertView</code> is presented to the user indicating that they have the option to send you a copy of the crash.  If they choose to send the report, it is emailed directly to the developer without the need for user interaction in a mail compose window.  The user additionally has the option to always send crash reports without prompting.  Once the report has been uploaded, the developer receives an email with the report as an attachment.
+    .clear
+    
+  %div
+    %h2 Can it really be that simple?
+    %p Yes.
+    .clear
