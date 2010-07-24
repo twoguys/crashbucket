@@ -14,14 +14,14 @@
     
   %div{ :style => "margin-bottom:50px;" }
     = image_tag "crash.png", :alt => "Crash Report", :width => "128", :height => "128", :style => "float:left;"
-    %h2{ :style => "margin-left:150px;margin-right:150px;padding-top:10px;" } What is it?
-    %p{ :style => "margin-left:150px;margin-right:150px;" } <strong>libcrashreport</strong> + <strong>crash bucket</strong> delivers instant crash reports from your iPhone apps. Those crashes can range from uncaught exceptions to memory issues caused by that hard to find extra release call (I know we’ve all been there). It is designed to be simple for the developer to implement and easy for the user interact with.
+    %h2{ :style => "margin-left:150px;margin-right:125px;padding-top:7px;" } What is it?
+    %p{ :style => "margin-left:150px;margin-right:125px;" } <strong>libcrashreport</strong> + <strong>crash bucket</strong> delivers instant crash reports from your iPhone apps. Those crashes can range from uncaught exceptions to memory issues caused by that hard to find extra release call (I know we’ve all been there). It is designed to be simple for the developer to implement and easy for the user interact with.
     .clear
     
   %div{ :style => "margin-bottom:50px;" }
-    = image_tag "iphone.png", :alt => "iPhone 4", :width => "200", :height => "355", :style => "float:right;margin-right:50px;"
-    %h2{ :style => "margin-left:100px;margin-right:250px;" } Why use it?
-    %p{ :style => "margin-left:100px;margin-right:250px;" } The crash reporter built into iTunes Connect has always given me mixed results. The delay and frequency with which reports are delivered is a large drawback.<br /><br />In a recent update to <a href="http://guicocoa.com/mygpa">MyGPA</a>, I mistakenly tried to reference a released object (yes, a rookie mistake).  I tested the app thouroughly on a phone and in the simulator and never once saw a crash.  Within hours of the application going live, <strong>libcrashreport</strong> began to deliver crash reports indicating a segmentation fault. I identified the problem two days after the update went live thanks to the instant feedback that <strong>libcrashreport</strong> provided.  By the time that the fix for the problem went live, I received almost <strong>80</strong> emailed crash reports from the app itself. I received <strong>0</strong> crash reports from iTunes Connect.<br /><br />How many of your users as experiencing crashes that you don’t know about?
+    = image_tag "iphone.png", :alt => "iPhone 4", :width => "200", :height => "355", :style => "float:right;"
+    %h2{ :style => "margin-left:100px;margin-right:200px;padding-top:5px;" } Why use it?
+    %p{ :style => "margin-left:100px;margin-right:200px;" } The crash reporter built into iTunes Connect has always given me mixed results. The delay and frequency with which reports are delivered is a large drawback.<br /><br />In a recent update to <a href="http://guicocoa.com/mygpa">MyGPA</a>, I mistakenly tried to reference a released object (yes, a rookie mistake).  I tested the app thouroughly on a phone and in the simulator and never once saw a crash.  Within hours of the application going live, <strong>libcrashreport</strong> began to deliver crash reports indicating a segmentation fault. I identified the problem two days after the update went live thanks to the instant feedback that <strong>libcrashreport</strong> provided.  By the time that the fix for the problem went live, I received almost <strong>80</strong> emailed crash reports from the app itself. I received <strong>0</strong> crash reports from iTunes Connect.<br /><br />How many of your users as experiencing crashes that you don’t know about?
     .clear
   
   %div{ :style => "margin-bottom:50px;" }

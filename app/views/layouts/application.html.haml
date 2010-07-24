@@ -25,7 +25,7 @@
         %h1{ :id => "site_title" }
           %a= link_to "crash bucket", root_path
         %ul{ :id => "site_links"}
-          %li= link_to "terms", terms_path
+          -# %li= link_to "terms", terms_path
           - if current_user
             %li= link_to "my apps", apps_path
             %li= link_to "log out", logout_path

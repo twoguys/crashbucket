@@ -1,15 +1,18 @@
+= content_for :head do
+  :css
+    div#main_container {
+      min-height:500px;
+    }
 #form_container
-	%h2 New App
-
-	= form_for @app do |form|
-		= form.label :name
-		%br/
-		= form.text_field :name, :class => "text_input"
-		%br/
-		= form.label :bundle_identifier
-		%br/
-		= form.text_field :bundle_identifier, :class => "text_input"
-		%br/
-		= form.submit "Create App", :class => "button_input"
-	
-	.clear
+  %h2 New App
+  = form_for @app do |form|
+    = form.label :name
+    %br/
+    = form.text_field :name, :class => "text_input"
+    %br/
+    = form.label :bundle_identifier
+    %br/
+    = form.text_field :bundle_identifier, :class => "text_input"
+    %br/
+    = form.submit "Create App", :class => "button_input"
+  .clear
