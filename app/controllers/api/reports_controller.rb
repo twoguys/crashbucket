@@ -19,13 +19,7 @@ class Api::ReportsController < Api::BaseController
         render :json => { :errors => @report.errors }, :status => :not_acceptable # 406
       end
     end
-    # if @report.valid?
-    #   existing_report = @app.reports.find_by_fingerprint(@report.fingerprint)
-    #   existing_report ? existing_report.increment!(:count) : @report.save
-    #   head :ok
-    # else
-    #   render :json => { :errors => @report.errors }, :status => :not_acceptable # 406
-    # end
+
   end
   
   
