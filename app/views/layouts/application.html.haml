@@ -27,7 +27,7 @@
         %ul{ :id => "site_links"}
           -# %li= link_to "terms", terms_path
           - if current_user
-            %li= link_to "my apps", apps_path
+            %li= link_to "apps", apps_path
             %li= link_to "log out", logout_path
           - else
             %li= link_to "log in", login_path
