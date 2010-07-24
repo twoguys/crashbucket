@@ -11,13 +11,13 @@
   %tr{ :id => "table_header" }
     %th{ :class => "first app_status" }
     %th{ :class => "app_name" } name
-    %th{ :class => "app_key" } identifier
+    %th{ :class => "app_key" } api key
     %th{ :class => "last app_reports" } crash reports
   - @apps.each do |app|
     %tr{ :class => "table_row" }
       %td
       %td= link_to app.name, app
-      %td= app.bundle_identifier
+      %td= app.api_key
       %td
         - count = app.reports.count
         - if count == 0
