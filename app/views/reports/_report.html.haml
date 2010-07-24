@@ -1,0 +1,7 @@
+%tr{ :class => "table_row" }
+  %td= link_to report.exc_name, [@app, report]
+  %td
+    = time_ago_in_words report.updated_at
+    ago
+  %td
+    = pluralize(report.count, "time")
