@@ -12,13 +12,13 @@
 ActiveRecord::Schema.define(:version => 20100724174619) do
 
   create_table "apps", :force => true do |t|
-    t.string    "name"
-    t.string    "api_key"
-    t.integer   "user_id"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
-    t.string    "bundle_identifier"
-    t.integer   "reports_count",     :default => 0
+    t.string   "name"
+    t.string   "api_key"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "bundle_identifier"
+    t.integer  "reports_count",     :default => 0, :null => false
   end
 
   add_index "apps", ["user_id"], :name => "index_apps_on_user_id"

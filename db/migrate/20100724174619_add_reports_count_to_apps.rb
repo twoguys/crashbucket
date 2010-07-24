@@ -1,6 +1,6 @@
 class AddReportsCountToApps < ActiveRecord::Migration
   def self.up
-    add_column :apps, :reports_count, :integer, :default => 0
+    add_column :apps, :reports_count, :integer, :default => 0, :null => false
   end
 
   def self.down
