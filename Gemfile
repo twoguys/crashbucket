@@ -11,6 +11,8 @@ gem "will_paginate",   :git => "http://github.com/mislav/will_paginate.git",  :b
 group :development do
   gem "mongrel"
   gem 'sqlite3-ruby', :require => 'sqlite3'
+  gem 'wirble'
+  gem 'hirb'
   #gem 'mysql'
 end
 
