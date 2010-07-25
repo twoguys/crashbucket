@@ -3,5 +3,4 @@
   %td= link_to app.name, app
   %td= app.api_key
   %td
-    -# = pluralize(app.reports_count, "report")
-    = pluralize(app.reports.count, "report")
+    = pluralize(app.reports_count, "report")
