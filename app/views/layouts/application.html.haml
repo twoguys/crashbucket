@@ -6,6 +6,7 @@
         - else
         crash bucket
     = stylesheet_link_tag "application-v2"
+    %meta{ :name => "robots", :content => "noindex" }
     = csrf_meta_tag
     = yield :head
     - if ENV['RAILS_ENV'] == 'production'
