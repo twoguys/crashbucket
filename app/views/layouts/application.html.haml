@@ -39,7 +39,7 @@
         .clear
     #footer_container
       #footer_content
-        - if request.user_agent.include? "MSIE"
+        - if request.user_agent && request.user_agent.include?("MSIE")
           %p{ :style => "margin-bottom:10px;" }
             get a
             %a{ :href => "http://abetterbrowser.org" } better browser
