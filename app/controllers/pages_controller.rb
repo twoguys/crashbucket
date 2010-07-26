@@ -1,7 +1,9 @@
 class PagesController < ApplicationController
   
   def about
-    @title = "about"
+    redirect_to apps_path if current_user
+    @user = User.new
+    render :layout => "about"
   end
   
   def terms

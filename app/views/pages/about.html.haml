@@ -1,43 +1,34 @@
-= content_for :head do
-  = stylesheet_link_tag "about"
+.signup
+  = link_to('Sign up', signup_path, :class => 'button')
+  Already have an account?
+  = link_to("Sign in", login_path)
 
-#info_sections
+.diagram= image_tag('/images/home-diagram.jpg')
 
-  %div{ :style => "margin-bottom:50px;" }
-    %h2 Easy to use
-    %p{ :style => "margin:0px;" } &bull; Include <code>GCCrashReport.h</code> and <code>libcrashreport.a</code> in your project
-    %p{ :style => "margin:0px;" } &bull; Include the SystemConfiguration framework in your project
-    %p{ :style => "margin:0px;" } &bull; Copy the following line into your <code>application:didFinishLaunchingWithOptions:</code>
-    .code
-      %code [<span style="color:#400080;">GCCrashReport beginWatchingforCrashesWithAPIKey</span>:<span style="color:#C86A59;">&lt;# your api key #&gt;</span> <span style="color:#400080;">delegate</span>:<span style="color:#A61390;">self</span>];
-    .clear
-    
-  %div{ :style => "margin-bottom:50px;" }
-    = image_tag "crash.png", :alt => "Crash Report", :width => "128", :height => "128", :style => "float:left;"
-    %h2{ :style => "margin-left:150px;margin-right:125px;padding-top:7px;" } What is it?
-    %p{ :style => "margin-left:150px;margin-right:125px;" } <strong>libcrashreport</strong> + <strong>crash bucket</strong> delivers instant crash reports from your iPhone apps. Those crashes can range from uncaught exceptions to memory issues caused by that hard to find extra release call (I know we’ve all been there). It is designed to be simple for the developer to implement and easy for the user interact with.
-    .clear
-    
-  %div{ :style => "margin-bottom:50px;" }
-    = image_tag "iphone.png", :alt => "iPhone 4", :width => "200", :height => "355", :style => "float:right;"
-    %h2{ :style => "margin-left:100px;margin-right:200px;padding-top:5px;" } Why use it?
-    %p{ :style => "margin-left:100px;margin-right:200px;" } The crash reporter built into iTunes Connect has always given me mixed results. The delay and frequency with which reports are delivered is a large drawback.<br /><br />In a recent update to <a href="http://guicocoa.com/mygpa">MyGPA</a>, I mistakenly tried to reference a released object (yes, a rookie mistake).  I tested the app thouroughly on a phone and in the simulator and never once saw a crash.  Within hours of the application going live, <strong>libcrashreport</strong> began to deliver crash reports indicating a segmentation fault. I identified the problem two days after the update went live thanks to the instant feedback that <strong>libcrashreport</strong> provided.  By the time that the fix for the problem went live, I received almost <strong>80</strong> emailed crash reports from the app itself. I received <strong>0</strong> crash reports from iTunes Connect.<br /><br />How many of your users as experiencing crashes that you don’t know about?
-    .clear
-  
-  %div{ :style => "margin-bottom:50px;" }
-    = image_tag "alert.png", :alt => "Alert View", :width => "250", :height => "148", :style => "float:left;"
-    %h2{ :style => "margin-left:275px;margin-right:100px;padding-top:10px;" } How does it work?
-    %p{ :style => "margin-left:275px;margin-right:100px;" } <strong>libcrashreport</strong> sits idle in your app, quietly watching for a crash. When (if) a crash occurs, a log is saved to disk. The next time the app is opened, a standard <code>UIAlertView</code> is presented to the user indicating that they have the option to send you a copy of the crash. If they choose to send the report, it is sent directly to <strong>crash bucket</strong>.
-    .clear
-    
-  %div
-    %h2 Can it really be that simple?
-    %p Yes.
-    .clear
-  
-#drawer
-  #slider
-    %a{ :href => "https://s3.amazonaws.com/guicocoa_downloads/libcrashreport.zip" }= image_tag "download-icon.png", :alt => "Download", :width => "48", :height => "48"
-    %h2
-      %a{ :href => "https://s3.amazonaws.com/guicocoa_downloads/libcrashreport.zip"} Download
-    %p version 1.3
+.download
+  %h1 Download
+  .icon= link_to(image_tag('/images/disk.jpg', :width => '63', :height => '66'), "https://s3.amazonaws.com/guicocoa_downloads/libcrashreport.zip")
+  .text
+    %p= link_to("Click to download", "https://s3.amazonaws.com/guicocoa_downloads/libcrashreport.zip")
+    %p Version 1.3
+    %p 66 kb
+  .arrow= link_to("", "https://s3.amazonaws.com/guicocoa_downloads/libcrashreport.zip")
+
+.instructions
+  %h1 Instructions
+  %ul
+    %li
+      Include
+      %em GCCrashReport.h
+      and
+      %em libcrashreport.a
+      in your project
+    %li
+      Include the
+      %em SystemConfiguration
+      framework in your project
+    %li
+      %strong Copy the following line into your
+      %em application:didFinishLaunchingWithOptions:
+    %li.code
+      = '<code>[<span style="color:#400080;">GCCrashReport beginWatchingforCrashesWithAPIKey</span>:<span style="color:#C86A59;">&lt;# your api key #&gt;</span> <span style="color:#400080;">delegate</span>:<span style="color:#A61390;">self</span>];</code>'.html_safe

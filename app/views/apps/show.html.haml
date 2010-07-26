@@ -1,25 +1,14 @@
-= content_for :breadcrumb do
-  #breadcrumb_container
-    #breadcrumb_content
-      %span= current_user.email
-      :plain
-        &nbsp;&bull;&nbsp;
-      %span= link_to "apps", apps_path
-      :plain
-        &nbsp;&bull;&nbsp;
-      %span= @app.name.downcase
-%h2{ :style => "margin-left:53px;display:inline;" }= @app.name
-%ul{ :style => "list-style:none;padding:0px;margin-bottom:0px;margin-left:53px;" }
-  %li
-    %strong identifier
-    = @app.bundle_identifier
-  %li
-    %strong api key:
-    = @app.api_key
-%table
-  %tr{ :id => "table_header" }
-    %th{ :class => "first report_name" } exception name
-    %th{ :class => "report_date" } last reported
-    %th{ :class => "last report_count" } count
-  = render @app.reports
-    
+- if @app.reports.empty?
+  .empty Good job! 0 crash reports for this app.
+- else
+  .options-bar
+    .type-chooser
+      open crashes
+    .search
+      search
+    .sorter
+      .newest newest
+      .frequent most frequent
+      .viewed most viewed
+  %ul.reports
+    = render @app.reports

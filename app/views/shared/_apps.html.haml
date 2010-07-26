@@ -1,0 +1,13 @@
+- if @apps
+  .apps-sidebar
+    .header
+      %h3 your apps
+      = link_to(image_tag("/images/plus.png"), new_app_path, :class => 'add-link')
+    %ul.apps
+      = render @apps
+
+  .main
+    = yield
+
+- else
+  = yield

@@ -1,22 +1,19 @@
-= content_for :head do
-  :css
-    div#main_container {
-      min-height:500px;
-    }
-#form_container
-  %h2 Create An Account
+.centered-form
   = form_for @user do |form|
-    = form.label :email, "Email Address"
-    %br/
-    = form.text_field :email, :class => "text_input"
-    %br/
-    = form.label :password, "Password"
-    %br/
-    = form.password_field :password, :class => "text_input"
-    %br/
-    = form.label :password_confirmation, "Confirm Password"
-    %br/
-    = form.password_field :password_confirmation, :class => "text_input"
-    %br/
-    = form.submit "Create Account", :class => "button_input"
-  .clear
+    %fieldset
+      %h2 Create An Account
+      %ul
+        %li
+          = form.label :email
+          = form.text_field :email
+        %li
+          = form.label :password
+          = form.password_field :password
+        %li
+          = form.label :password_confirmation, "Password (again)"
+          = form.password_field :password_confirmation
+        %li.submit
+          = form.submit "Create Account"
+  .right.small
+    Already have an account?
+    = link_to("Sign in", login_path)

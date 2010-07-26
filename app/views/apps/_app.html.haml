@@ -1,6 +1,4 @@
-%tr{ :class => "table_row" }
-  %td
-  %td= link_to app.name, app
-  %td= app.api_key
-  %td
-    = pluralize(app.reports_count, "report")
+%li.app
+  %a{:href => app_path(app), :class => @app == app ? "selected" : ""}
+    .name= app.name
+    .count= app.reports_count

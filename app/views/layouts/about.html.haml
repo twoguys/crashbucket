@@ -4,15 +4,11 @@
     %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "Content-Type" }
     %meta{ :name => "Description", "http-equiv" => "Description", :content => "" }
     %meta{ :name => "Keywords", "http-equiv" => "Keywords", :content => "" }
-    %meta{ :name => "robots", :content => "noindex" }
     = csrf_meta_tag
     %link{ :id => 'favicon', :href => '/favicon.ico', :rel => 'icon', :type => 'image/x-icon' }/
     %title
-      - if @title
-        crashbucket - #{@title}
-      - else
-        crashbucket - iPhone crash tracking
-    = stylesheet_link_tag 'app', :media => 'screen, projection'
+      crashbucket - iPhone crash tracking
+    = stylesheet_link_tag 'about', :media => 'screen, projection'
     /[if lt IE 7]
       = stylesheet_link_tag 'ie', :media => 'screen, projection'
     = javascript_include_tag 'jquery-1.4.2.min'
@@ -26,13 +22,9 @@
         #header
           .insides
             #logo
-            - if current_user
-              #user-info
-                logged in as
-                %strong= link_to(current_user.email, logout_path)
         #mid
           .insides
-            = render 'shared/apps'
+            = yield
     #ie6_pwnage
       = "We've noticed you're using a pretty old browser and we're sad that you're missing out on so much!"
       %strong= "Please upgrade to one of these free browsers:"
@@ -42,10 +34,4 @@
         %li= link_to('IE8', 'http://www.microsoft.com/windows/internet-explorer/default.aspx')
     #footer
       .insides
-        this is a
-        %a{ :href => "http://guicocoa.com" } gui cocoa
-        and
-        %a{ :href => "http://weretwoguys.com" } two guys
-        project - copyright ©
-        = Time.now.year
-    = render 'shared/analytics'
+    = #render 'shared/analytics'

@@ -1,0 +1,145 @@
+@import "reset"
+
+#header
+	margin: 10px 0
+	#logo
+		background: transparent url(../images/logo.png) no-repeat 0 0
+		width: 231px
+		height: 36px
+	#user-info
+		position: absolute
+		top: 20px
+		right: 0
+		color: #555
+		a
+			color: #000
+
+.centered-form
+	width: 415px
+	margin: 0 auto
+	background-color: #efefef
+	padding: 20px
+	-webkit-border-radius: 10px
+	-moz-border-radius: 10px
+	h2
+		text-align: center
+
+/* App list */
+.apps-sidebar
+	position: relative
+	float: left
+	width: 210px
+	.header
+		height: 16px
+		padding: 5px 0
+		.add-link
+			position: absolute
+			top: 5px
+			right: 0
+	ul
+		margin-top: 5px
+		border-top: 1px solid #ccc
+		li.app
+			height: 34px
+			border-bottom: 1px solid #ccc
+			a
+				color: #000
+				padding: 5px 0 5px 5px
+				height: 24px
+				font-size: 1.1em
+				display: block
+			a:hover .name
+				color = !link_color
+			a.selected
+				background-color: #ccc
+			a.selected:hover .name
+				color: #000
+			.name, .count
+				height: 24px
+				line-height: 24px
+				vertical-align: middle
+			.name
+				width: 170px
+				float: left
+			.count
+				width: 24px
+				background-color: #ccc
+				-webkit-border-radius: 5px
+				-moz-border-radius: 5px
+				text-align: center
+				font-weight: bold
+				float: right
+.main
+	float: right
+	width: 700px
+
+/* App show */
+.empty
+	font-size: 1.5em
+	color: #999
+	text-align: center
+	padding-top: 40px
+.options-bar
+	height: 30px
+	.type-chooser, .search
+		float: left
+		margin-right: 10px
+		padding: 5px 10px
+		height: 20px
+		line-height: 20px
+		border: 1px solid #ccc
+		border-bottom: none
+	.type-chooser
+		width: 130px
+	.search
+		width: 154px
+	.sorter div
+		float: right
+		margin-left: 20px
+ul.reports
+	border-top: 1px solid #ccc
+	li.report
+		height: 50px
+		border-bottom: 1px solid #ccc
+		padding: 5px 0
+		.stats
+			float: left
+			width: 60px
+			height: 50px
+			position: relative
+			.count, .views
+				height: 18px
+				width: 60px
+				position: absolute
+				padding-left: 25px
+				font-weight: bold
+				padding-top: 2px
+			.count
+				top: 5px
+				left: 0
+				background: transparent url(../images/counter.png) no-repeat 0 50%
+			.views
+				top: 25px
+				left: 0
+				background: transparent url(../images/views.png) no-repeat 0 50%
+		.info
+			float: left
+			padding: 6px 0
+			width: 540px
+			.name
+				font-weight: bold
+			.details
+				color: #777
+		.when
+			width: 100px
+			height: 50px
+			line-height: 50px
+			vertical-align: middle
+			float: right
+			text-align: right
+
+/* Global styles */
+.right
+	float: right
+.small
+	font-size: 0.9em
