@@ -14,6 +14,9 @@ class Report < ActiveRecord::Base
   #after_initialize :generate_fingerprint
   before_create :generate_fingerprint
   
+  scope :open, where("")
+  scope :closed, where("")
+  
   attr_accessor :bundle_identifier
   
   def self.per_page; 10; end  

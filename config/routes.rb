@@ -11,6 +11,9 @@ Crashreportapp::Application.routes.draw do |map|
   resources :user_sessions
   
   resources :apps do
+    member do
+      get :closed
+    end
     resources :reports
   end
   

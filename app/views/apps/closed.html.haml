@@ -3,9 +3,9 @@
 - else
   .options-bar
     .type-chooser
-      %span open
+      %span closed
       .options{:style => "display:none;"}
-        = link_to("closed", closed_app_path(@app))
+        = link_to("open", @app)
     .search
       search
     .sorter

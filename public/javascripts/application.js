@@ -1,2 +1,11 @@
-// Place your application-specific JavaScript functions and classes here
-// This file is automatically included by javascript_include_tag :defaults
+function handleChooserHover() {
+	$('.type-chooser').hover(function() {
+		$(this).find('.options').show();
+	}, function() {
+		$(this).find('.options').hide();
+	});
+}
+
+$(document).ready(function() {
+	handleChooserHover();
+});

@@ -41,7 +41,7 @@ body > #wrap {
   min-height: 400px; }
 
 #main {
-  padding-bottom: 106px; }
+  padding-bottom: 101px; }
 
 #footer {
   position: relative;
@@ -119,6 +119,9 @@ form input[type="submit"] {
     #header #user-info a {
       color: black; }
 
+#footer {
+  text-align: center; }
+
 .centered-form {
   width: 415px;
   margin: 0 auto;
@@ -187,22 +190,45 @@ form input[type="submit"] {
   padding-top: 40px; }
 
 .options-bar {
-  height: 30px; }
+  height: 30px;
+  position: relative; }
   .options-bar .type-chooser, .options-bar .search {
-    float: left;
-    margin-right: 10px;
+    position: absolute;
+    top: -1px;
     padding: 5px 10px;
-    height: 20px;
-    line-height: 20px;
+    min-height: 20px;
     border: 1px solid #cccccc;
     border-bottom: none; }
   .options-bar .type-chooser {
-    width: 130px; }
+    width: 80px;
+    left: 0;
+    z-index: 5;
+    background: white url(../images/selector-down.png) no-repeat 90% 10px;
+    border: 1px solid #cccccc;
+    cursor: pointer;
+    font-weight: bold; }
+    .options-bar .type-chooser a, .options-bar .type-chooser span {
+      padding: 3px;
+      line-height: 14px;
+      width: 70px;
+      display: block; }
+    .options-bar .type-chooser a:hover {
+      background-color: #cb0000;
+      color: white; }
   .options-bar .search {
-    width: 154px; }
-  .options-bar .sorter div {
+    width: 154px;
+    left: 120px;
+    line-height: 20px; }
+  .options-bar .sorter {
     float: right;
-    margin-left: 20px; }
+    background: transparent url(../images/sorter.png) no-repeat 0 50%;
+    width: 250px;
+    height: 30px; }
+    .options-bar .sorter div {
+      float: right;
+      margin-left: 20px;
+      line-height: 30px;
+      vertical-align: middle; }
 
 ul.reports {
   border-top: 1px solid #cccccc; }

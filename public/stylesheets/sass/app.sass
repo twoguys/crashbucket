@@ -14,6 +14,9 @@
 		a
 			color: #000
 
+#footer
+	text-align: center
+
 .centered-form
 	width: 415px
 	margin: 0 auto
@@ -81,21 +84,44 @@
 	padding-top: 40px
 .options-bar
 	height: 30px
+	position: relative
 	.type-chooser, .search
-		float: left
-		margin-right: 10px
+		position: absolute
+		top: -1px
 		padding: 5px 10px
-		height: 20px
-		line-height: 20px
+		min-height: 20px
 		border: 1px solid #ccc
 		border-bottom: none
 	.type-chooser
-		width: 130px
+		width: 80px
+		left: 0
+		z-index: 5
+		background: #fff url(../images/selector-down.png) no-repeat 90% 10px
+		border: 1px solid #ccc
+		cursor: pointer
+		font-weight: bold
+		a, span
+			padding: 3px
+			line-height: 14px
+			width: 70px
+			display: block
+		a:hover
+			background-color = !link_color
+			color: #fff
 	.search
 		width: 154px
-	.sorter div
+		left: 120px
+		line-height: 20px
+	.sorter
 		float: right
-		margin-left: 20px
+		background: transparent url(../images/sorter.png) no-repeat 0 50%
+		width: 250px
+		height: 30px
+		div
+			float: right
+			margin-left: 20px
+			line-height: 30px
+			vertical-align: middle
 ul.reports
 	border-top: 1px solid #ccc
 	li.report
