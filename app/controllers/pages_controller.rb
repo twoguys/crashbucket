@@ -1,9 +1,12 @@
 class PagesController < ApplicationController
   
   def about
-    redirect_to apps_path if current_user
-    @user = User.new
-    render :layout => "about"
+    if current_user
+      redirect_to apps_path
+    else
+      @user = User.new
+      render :layout => "about"
+    end
   end
   
   def terms
