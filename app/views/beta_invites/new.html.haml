@@ -1,0 +1,13 @@
+.centered-form
+  = form_for @beta_invite do |form|
+    %fieldset
+      %h2 Beta Invite
+      %ul
+        %li
+          = form.label :email
+          = form.text_field :email
+        %li.submit
+          = form.submit "Submit"
+  .right.small
+    Already have an account?
+    = link_to("Sign in", login_path)

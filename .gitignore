@@ -12,3 +12,4 @@ public/system
 .rake_tasks*
 .rvmrc
 config/initializers/local*.rb
+Gemfile.lock

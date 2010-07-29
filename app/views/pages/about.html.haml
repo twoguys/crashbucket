@@ -10,7 +10,7 @@
   .icon= link_to(image_tag('/images/disk.jpg', :width => '63', :height => '66'), "https://s3.amazonaws.com/guicocoa_downloads/libcrashreport.zip")
   .text
     %p= link_to("Click to download", "https://s3.amazonaws.com/guicocoa_downloads/libcrashreport.zip")
-    %p Version 1.3
+    %p Version 1.3.1
     %p 66 kb
   .arrow= link_to("", "https://s3.amazonaws.com/guicocoa_downloads/libcrashreport.zip")
 
@@ -31,4 +31,4 @@
       %strong Copy the following line into your
       %em application:didFinishLaunchingWithOptions:
     %li.code
-      = '<code>[<span style="color:#400080;">GCCrashReport beginWatchingforCrashesWithAPIKey</span>:<span style="color:#C86A59;">&lt;# your api key #&gt;</span> <span style="color:#400080;">delegate</span>:<span style="color:#A61390;">self</span>];</code>'.html_safe
+      = '<code>[<span style="color:#400080;">GCCrashReport sharedReportWithAPIKey</span>:<span style="color:#C86A59;">&lt;# your api key #&gt;</span> <span style="color:#400080;">];</code>'.html_safe
