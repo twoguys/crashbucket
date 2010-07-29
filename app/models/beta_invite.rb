@@ -5,11 +5,13 @@ class BetaInvite < ActiveRecord::Base
   
   before_create           :generate_code
   
-  def self.send_invites(num)
-    beta_invites = BetaInvite.limit(num)
-    beta_invites.each do |invite|
-      Notifications.beta_invite(invite).deliver
-    end
+  def self.deliver_invites(num)
+    BetaInvite.where("sent_at IS NULL").limit(num).each { |invite| invite.deliver }
+  end
+  
+  def deliver
+    Notifications.beta_invite(self).deliver
+    self.update_attribute(:sent_at, Time.now)
   end
   
   def generate_code
