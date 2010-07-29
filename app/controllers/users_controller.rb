@@ -4,8 +4,18 @@ class UsersController < ApplicationController
 
   def new
     redirect_to root_path if current_user
-    @user = User.new
-    @title = "signup"
+    
+    beta_invite = BetaInvite.find_by_code(params[:code])
+    if beta_invite
+      @user = User.new(:email => beta_invite.email)
+      @title = "signup"
+    else
+      redirect_to root_path
+    end
+    
+    # redirect_to root_path if current_user
+    # @user = User.new
+    # @title = "signup"
   end
   
   def create
