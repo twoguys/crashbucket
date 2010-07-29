@@ -21,7 +21,7 @@ Crashreportapp::Application.routes.draw do |map|
   end
   
   resources :beta_invites,  :path => "invites"
-  match 'beta/:code'     => 'users#new',         :as => 'beta_invite'
+  match 'beta/:code'     => 'users#new',         :as => 'invite_code'
   
 	#root
   match '/'                 => 'pages#about',       :as => 'root'
