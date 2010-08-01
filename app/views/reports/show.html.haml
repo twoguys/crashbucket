@@ -1,43 +1,32 @@
-= content_for :breadcrumb do
-  #breadcrumb_container
-    #breadcrumb_content
-      %span= current_user.email
-      :plain
-        &nbsp;&bull;&nbsp;
-      %span= link_to "apps", apps_path
-      :plain
-        &nbsp;&bull;&nbsp;
-      %span= link_to @report.app.name.downcase, @report.app
-      :plain
-        &nbsp;&bull;&nbsp;
-      %span= @report.exc_name.downcase
-%h2{ :style => "display:inline;" }= @report.exc_name
+= render 'apps/options'
 
+.report-info
+  %h2= @report.exc_name
 
-%ul{ :style => "list-style:none;padding:0px;margin-bottom:0px;" }
-  %li
-    %strong reason:
-    = @report.exc_reason
-  %li
-    %strong device:
-    = @report.device
-  %li
-    %strong os version:
-    = @report.os_version
-  %li
-    %strong app version:
-    = @report.app_version
-  %li
-    %strong last reported:
-    = time_ago_in_words @report.updated_at
-    ago
-  %li
-    %strong count:
-    = @report.count
-%span
-  %strong backtrace:
-%pre{ :style => "font-size:12px;margin:0px auto;width:900px" }= @report.backtrace
+  %ul
+    %li
+      %strong reason:
+      = @report.exc_reason
+    %li
+      %strong device:
+      = @report.device
+    %li
+      %strong os version:
+      = @report.os_version
+    %li
+      %strong app version:
+      = @report.app_version
+    %li
+      %strong last reported:
+      = time_ago_in_words @report.updated_at
+      ago
+    %li
+      %strong count:
+      = @report.count
+  %span
+    %strong backtrace:
+  %pre{ :style => "font-size:12px;margin:0px auto;width:900px" }= @report.backtrace
 
--# convertor = Syntax::Convertors::HTML.for_syntax "text"
--# %div.backtrace
-  -# = convertor.convert("#{@report.backtrace}").html_safe
+  -# convertor = Syntax::Convertors::HTML.for_syntax "text"
+  -# %div.backtrace
+    -# = convertor.convert("#{@report.backtrace}").html_safe

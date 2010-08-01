@@ -1,16 +1,6 @@
 - if @app.reports.empty?
   .empty Good job! 0 crash reports for this app.
 - else
-  .options-bar
-    .type-chooser
-      %span closed
-      .options{:style => "display:none;"}
-        = link_to("open", @app)
-    .search
-      search
-    .sorter
-      .newest newest
-      .frequent most frequent
-      .viewed most viewed
+  = render 'options'
   %ul.reports
     = render @app.reports

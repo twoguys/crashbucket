@@ -105,6 +105,9 @@ form input[type="submit"] {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px; }
 
+.clear {
+  clear: both; }
+
 #logo {
   background: transparent url(../images/logo-large.png) no-repeat 50% 10px;
   width: 100%;
@@ -122,31 +125,18 @@ form input[type="submit"] {
     text-indent: -9999px;
     background: transparent url(../images/signup-button.png) no-repeat 0 0; }
 
+.about {
+  background-color: white; }
+
 .diagram {
   padding-bottom: 30px;
   margin-bottom: 30px; }
 
-.instructions {
-  float: right; }
-  .instructions h1 {
-    text-indent: -9999px;
-    background: transparent url(../images/instructions.gif) no-repeat 0 0;
-    width: 200px;
-    height: 21px;
-    margin-bottom: 15px; }
-  .instructions ul li {
-    margin-bottom: 5px; }
-  .instructions ul li.code {
-    padding-top: 10px; }
-  .instructions em {
-    color: #cb0000; }
-
 .download {
   float: left;
-  width: 340px;
-  padding-left: 20px;
-  position: relative;
-  background: transparent url(../images/download-bg.png) no-repeat 90% 50%; }
+  width: 288px;
+  padding-left: 60px;
+  position: relative; }
   .download h1 {
     text-indent: -9999px;
     background: transparent url(../images/download.gif) no-repeat 0 0;
@@ -159,6 +149,8 @@ form input[type="submit"] {
     cursor: pointer; }
   .download .text {
     color: #777777; }
+    .download .text p {
+      margin: 0; }
   .download a {
     color: black;
     font-weight: bold;
@@ -169,9 +161,24 @@ form input[type="submit"] {
     height: 39px;
     position: absolute;
     top: 35px;
-    left: 38px;
+    left: 78px;
     -webkit-transition: top 0.2s linear;
     cursor: pointer; }
 
 .download:hover .arrow a {
   top: 40px; }
+
+.instructions {
+  float: left; }
+  .instructions h1 {
+    text-indent: -9999px;
+    background: transparent url(../images/instructions.gif) no-repeat 0 0;
+    width: 200px;
+    height: 21px;
+    margin-bottom: 15px; }
+  .instructions ul li {
+    margin-bottom: 5px; }
+  .instructions ul li.code {
+    padding-top: 10px; }
+  .instructions em {
+    color: #cb0000; }

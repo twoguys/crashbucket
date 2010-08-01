@@ -11,11 +11,18 @@ class AppsController < ApplicationController
     @app = current_user.apps.find(params[:id])
     @title = @app.name.downcase
     @reports = @app.reports.open
+    @open = true
+  end
+  
+  def info
+    @app = current_user.apps.find(params[:id])
+    @info = true
   end
 
   def closed
     @app = current_user.apps.find(params[:id])
     @reports = @app.reports.closed
+    @closed = true
   end
   
   def new

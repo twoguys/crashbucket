@@ -105,8 +105,11 @@ form input[type="submit"] {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px; }
 
+.clear {
+  clear: both; }
+
 #header {
-  margin: 10px 0; }
+  padding: 10px 0; }
   #header #logo {
     background: transparent url(../images/logo.png) no-repeat 0 0;
     width: 231px;
@@ -146,20 +149,21 @@ form input[type="submit"] {
       right: 0; }
   .apps-sidebar ul {
     margin-top: 5px;
-    border-top: 1px solid #cccccc; }
+    border: 1px solid #dadada;
+    border-bottom: none; }
     .apps-sidebar ul li.app {
-      height: 34px;
-      border-bottom: 1px solid #cccccc; }
+      height: 40px;
+      border-bottom: 1px solid #dadada; }
       .apps-sidebar ul li.app a {
         color: black;
-        padding: 5px 0 5px 5px;
+        padding: 8px;
         height: 24px;
         font-size: 1.1em;
         display: block; }
       .apps-sidebar ul li.app a:hover .name {
         color: #cb0000; }
       .apps-sidebar ul li.app a.selected {
-        background-color: #cccccc; }
+        background-color: #dadada; }
       .apps-sidebar ul li.app a.selected:hover .name {
         color: black; }
       .apps-sidebar ul li.app .name, .apps-sidebar ul li.app .count {
@@ -167,11 +171,11 @@ form input[type="submit"] {
         line-height: 24px;
         vertical-align: middle; }
       .apps-sidebar ul li.app .name {
-        width: 170px;
+        width: 160px;
         float: left; }
       .apps-sidebar ul li.app .count {
         width: 24px;
-        background-color: #cccccc;
+        background-color: #dadada;
         -webkit-border-radius: 5px;
         -moz-border-radius: 5px;
         text-align: center;
@@ -190,9 +194,40 @@ form input[type="submit"] {
   padding-top: 40px; }
 
 .options-bar {
-  height: 30px;
-  position: relative; }
-  .options-bar .type-chooser, .options-bar .search {
+  height: 25px;
+  position: relative;
+  font-size: 1.1em; }
+  .options-bar a {
+    display: block;
+    float: left;
+    padding-left: 22px;
+    color: black;
+    width: 80px; }
+  .options-bar a:hover {
+    color: #cb0000; }
+  .options-bar .links {
+    position: absolute;
+    left: 0; }
+    .options-bar .links .info {
+      background: transparent url(../images/gear.png) no-repeat 0 0; }
+    .options-bar .links .open {
+      background: transparent url(../images/open.png) no-repeat 0 0; }
+    .options-bar .links .closed {
+      background: transparent url(../images/closed.png) no-repeat 0 0; }
+    .options-bar .links .sorter {
+      background: transparent url(../images/sorter.png) no-repeat 0 0; }
+    .options-bar .links .current {
+      font-weight: bold; }
+  .options-bar .search {
+    width: 170px;
+    height: 15px;
+    line-height: 15px;
+    padding: 5px;
+    position: absolute;
+    right: 0;
+    border: 1px solid #cccccc;
+    border-bottom: none; }
+  .options-bar .type-chooser {
     position: absolute;
     top: -1px;
     padding: 5px 10px;
@@ -215,30 +250,17 @@ form input[type="submit"] {
     .options-bar .type-chooser a:hover {
       background-color: #cb0000;
       color: white; }
-  .options-bar .search {
-    width: 154px;
-    left: 120px;
-    line-height: 20px; }
-  .options-bar .sorter {
-    float: right;
-    background: transparent url(../images/sorter.png) no-repeat 0 50%;
-    width: 250px;
-    height: 30px; }
-    .options-bar .sorter div {
-      float: right;
-      margin-left: 20px;
-      line-height: 30px;
-      vertical-align: middle; }
 
 ul.reports {
-  border-top: 1px solid #cccccc; }
+  border: 1px solid #dadada;
+  border-bottom: none; }
   ul.reports li.report {
     height: 50px;
-    border-bottom: 1px solid #cccccc;
-    padding: 5px 0; }
+    border-bottom: 1px solid #dadada;
+    padding: 5px 10px; }
     ul.reports li.report .stats {
       float: left;
-      width: 60px;
+      width: 50px;
       height: 50px;
       position: relative; }
       ul.reports li.report .stats .count, ul.reports li.report .stats .views {
@@ -259,7 +281,7 @@ ul.reports {
     ul.reports li.report .info {
       float: left;
       padding: 6px 0;
-      width: 540px; }
+      width: 520px; }
       ul.reports li.report .info .name {
         font-weight: bold; }
       ul.reports li.report .info .details {
@@ -271,6 +293,15 @@ ul.reports {
       vertical-align: middle;
       float: right;
       text-align: right; }
+
+.app-info {
+  margin-top: 10px; }
+  .app-info .value {
+    padding: 5px 0; }
+
+.report-info {
+  padding-top: 10px;
+  border-top: 1px solid #dadada; }
 
 /* Global styles */
 .right {

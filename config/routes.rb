@@ -12,6 +12,7 @@ Crashreportapp::Application.routes.draw do |map|
   
   resources :apps do
     member do
+      get :info
       get :closed
     end
     resources :reports
