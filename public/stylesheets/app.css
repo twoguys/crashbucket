@@ -111,16 +111,17 @@ form input[type="submit"] {
 #header {
   padding: 10px 0; }
   #header #logo {
+    display: block;
+    text-indent: -9999px;
     background: transparent url(../images/logo.png) no-repeat 0 0;
     width: 231px;
     height: 36px; }
   #header #user-info {
     position: absolute;
     top: 20px;
-    right: 0;
-    color: #555555; }
+    right: 0; }
     #header #user-info a {
-      color: black; }
+      margin-left: 10px; }
 
 #footer {
   text-align: center; }
@@ -195,6 +196,7 @@ form input[type="submit"] {
 
 .options-bar {
   height: 25px;
+  padding-top: 6px;
   position: relative;
   font-size: 1.1em; }
   .options-bar a {
@@ -216,17 +218,33 @@ form input[type="submit"] {
       background: transparent url(../images/closed.png) no-repeat 0 0; }
     .options-bar .links .sorter {
       background: transparent url(../images/sorter.png) no-repeat 0 0; }
+    .options-bar .links .back {
+      background: transparent url(../images/back.png) no-repeat 2px 2px; }
     .options-bar .links .current {
       font-weight: bold; }
+  .options-bar .actions {
+    position: absolute;
+    left: 150px; }
+    .options-bar .actions a {
+      width: auto;
+      position: relative;
+      top: -2px;
+      background: #980000;
+      font-weight: bold;
+      color: white;
+      padding: 2px 6px;
+      cursor: pointer; }
   .options-bar .search {
     width: 170px;
-    height: 15px;
-    line-height: 15px;
+    height: 20px;
+    line-height: 20px;
     padding: 5px;
     position: absolute;
+    top: 0;
     right: 0;
-    border: 1px solid #cccccc;
-    border-bottom: none; }
+    border: 1px solid #dadada;
+    border-bottom: none;
+    color: #555555; }
   .options-bar .type-chooser {
     position: absolute;
     top: -1px;

@@ -1,10 +1,10 @@
 .signup
-  = link_to('Sign up', new_beta_invite_path, :class => 'button')
+  = link_to('Sign up', signup_path, :class => 'button')
   Already have an account?
   = link_to("Sign in", login_path)
 
 .about
-  .diagram= image_tag('/images/home-diagram.jpg')
+  .diagram
 
   .download
     %h1 Download

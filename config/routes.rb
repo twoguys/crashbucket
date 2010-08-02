@@ -1,9 +1,9 @@
 Crashreportapp::Application.routes.draw do |map|
 
   # session routes
-  match 'login'   =>  'user_sessions#new',      :as => :login  
-  match 'logout'  =>  'user_sessions#destroy',  :as => :logout
-  match 'signup'  =>  'users#new',              :as => :signup
+  match 'signin'  =>  'user_sessions#new',      :as => :login  
+  match 'signout' =>  'user_sessions#destroy',  :as => :logout
+  match 'signup'  =>  'beta_invites#new',       :as => :signup
   match 'about'   =>  'pages#about',            :as => :about
   match 'terms'   =>  'pages#terms',            :as => :terms
   

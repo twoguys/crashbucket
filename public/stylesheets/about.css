@@ -130,12 +130,16 @@ form input[type="submit"] {
 
 .diagram {
   padding-bottom: 30px;
-  margin-bottom: 30px; }
+  margin-bottom: 30px;
+  width: 960px;
+  height: 220px;
+  background: #efefef url(../images/home-diagram.png) no-repeat 50% 50%;
+  border: 1px solid #dddddd; }
 
 .download {
   float: left;
-  width: 288px;
-  padding-left: 60px;
+  width: 328px;
+  margin-left: 120px;
   position: relative; }
   .download h1 {
     text-indent: -9999px;
@@ -161,7 +165,7 @@ form input[type="submit"] {
     height: 39px;
     position: absolute;
     top: 35px;
-    left: 78px;
+    left: 18px;
     -webkit-transition: top 0.2s linear;
     cursor: pointer; }
 

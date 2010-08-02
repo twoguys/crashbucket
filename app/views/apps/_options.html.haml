@@ -1,0 +1,8 @@
+.options-bar
+  .links
+    = link_to("app info", info_app_path(@app), :class => "info #{"current" if @info}")
+    = link_to("open", @app, :class => "open #{"current" if @open}")
+    = link_to("closed", closed_app_path(@app), :class => "closed #{"current" if @closed}")
+    = link_to("newest", "#", :class => 'sorter')
+    = link_to("frequent", "#", :class => 'sorter')
+  .search search coming soon

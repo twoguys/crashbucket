@@ -25,11 +25,11 @@
       #main.clearfix
         #header
           .insides
-            #logo
+            = link_to('home', root_path, :id => 'logo')
             - if current_user
               #user-info
-                logged in as
-                %strong= link_to(current_user.email, logout_path)
+                %strong= current_user.email
+                = link_to('sign out', logout_path)
         #mid
           .insides
             = render 'shared/apps'
