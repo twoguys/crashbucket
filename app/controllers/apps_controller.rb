@@ -5,6 +5,7 @@ class AppsController < ApplicationController
   def index
     @title = "apps"
     @apps = current_user.apps.paginate(:page => params[:page])
+    redirect_to new_app_path if @apps.empty?
   end
   
   def show
