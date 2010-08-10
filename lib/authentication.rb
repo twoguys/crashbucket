@@ -29,21 +29,21 @@ module Authentication
     @current_user = current_user_session && current_user_session.record  
   end
   
-  # def admin_required
-  #   if current_user
-  #     if admin?
-  #       return
-  #     else
-  #       render :file => "#{RAILS_ROOT}/public/401.html", :status => :unauthorized 
-  #     end
-  #   else
-  #     redirect_to signin_path
-  #   end
-  # end
-  # 
-  # def admin?
-  #   current_user.admin?
-  # end
+  def admin_required
+    if current_user
+      if admin?
+        return
+      else
+        render :file => "#{RAILS_ROOT}/public/401.html", :status => :unauthorized 
+      end
+    else
+      redirect_to signin_path
+    end
+  end
+  
+  def admin?
+    current_user.admin?
+  end
   
   
 end

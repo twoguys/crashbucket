@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100729152648) do
+ActiveRecord::Schema.define(:version => 20100810023143) do
 
   create_table "apps", :force => true do |t|
     t.string    "name"
@@ -24,11 +24,11 @@ ActiveRecord::Schema.define(:version => 20100729152648) do
   add_index "apps", ["user_id"], :name => "index_apps_on_user_id"
 
   create_table "beta_invites", :force => true do |t|
-    t.string   "email"
-    t.string   "code"
-    t.datetime "sent_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "email"
+    t.string    "code"
+    t.timestamp "sent_at"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   create_table "reports", :force => true do |t|
@@ -53,9 +53,10 @@ ActiveRecord::Schema.define(:version => 20100729152648) do
     t.string    "crypted_password"
     t.string    "password_salt"
     t.string    "persistence_token"
-    t.string    "perishable_token",  :default => "", :null => false
+    t.string    "perishable_token",  :default => "",    :null => false
     t.timestamp "created_at"
     t.timestamp "updated_at"
+    t.boolean   "admin",             :default => false
   end
 
   add_index "users", ["perishable_token"], :name => "index_users_on_perishable_token"

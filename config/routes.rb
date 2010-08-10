@@ -24,6 +24,14 @@ Crashreportapp::Application.routes.draw do |map|
     end
   end
   
+  namespace :admin do
+    resources :beta_invites, :path => 'invites' do
+      member do
+        get :deliver
+      end
+    end
+  end
+  
   resources :beta_invites,  :path => "invites"
   match 'beta/:code'     => 'users#new',         :as => 'invite_code'
   

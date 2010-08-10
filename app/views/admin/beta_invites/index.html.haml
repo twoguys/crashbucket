@@ -1,0 +1,16 @@
+%table
+	%tr{ :id => "table_header" }
+		%th{:class => "first" } email
+		%th code
+		%th action
+		%th{:class => "last" } sent at
+	- @beta_invites.each do |beta_invite|
+		%tr{ :class => "table_row" }
+			%td{:class => "table_col_name" }
+				= mail_to beta_invite.email, beta_invite.email
+			%td{:class => "table_col_key" }
+				= link_to "Code Link", invite_code_path(beta_invite.code)
+			%td{:class => "table_col_key" }
+				= link_to "Send", ['deliver', 'admin', beta_invite]
+			%td{:class => "table_col_key" }
+				= beta_invite.sent_at
