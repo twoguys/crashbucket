@@ -1,6 +1,11 @@
-- if @app.reports.empty?
-  .empty Good job! 0 crash reports for this app.
+= render 'options'
+- if @app.reports.empty? && @open
+  %ul.reports
+    %li.report.empty
 - else
-  = render 'options'
   %ul.reports
     = render @app.reports
+  - if @open
+    .fix-those-suckers
+  - elsif @closed
+    .nice-job

@@ -3,6 +3,6 @@
     .count= report.count
     .views 0
   .info
-    .name= link_to report.exc_name, [@app, report]
-    .details= report.exc_reason
+    .name= link_to report.exc_name.truncate(80), [@app, report]
+    .details= report.exc_reason.truncate(90)
   .when #{time_ago_in_words report.updated_at} ago

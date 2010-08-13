@@ -1,4 +1,8 @@
 @import "reset"
+$border_color = #dfdfdf
+
+body
+	background: transparent url(../images/bg-texture.png) repeat 0 0
 
 #header
 	padding: 10px 0
@@ -21,13 +25,29 @@
 .centered-form
 	width: 415px
 	margin: 0 auto
-	background-color: #efefef
+	background-color: #fff
 	padding: 20px
 	-webkit-border-radius: 10px
 	-moz-border-radius: 10px
 	h2
 		text-align: center
-
+		
+/* Funny notes */
+.add-apps-note
+	width: 237px
+	height: 31px
+	background: transparent url(../images/this-is-where-you-add-apps.png) no-repeat 0 0
+.have-some-apps
+	width: 237px
+	height: 75px
+	background: transparent url(../images/now-that-you-have-some-apps.png) no-repeat 0 100%
+.fix-those-suckers
+	height: 75px
+	background: transparent url(../images/fix-those-suckers.png) no-repeat 50% 50%
+.nice-job
+	height: 75px
+	background: transparent url(../images/nice-job.png) no-repeat 50% 50%
+	
 /* App list */
 .apps-sidebar
 	position: relative
@@ -38,15 +58,19 @@
 		padding: 5px 0
 		.add-link
 			position: absolute
-			top: 5px
+			background: transparent url(../images/add.png) 0 50% no-repeat
+			padding-left: 20px
+			color: #000
+			top: 6px
 			right: 0
 	ul
+		background-color: #fff
 		margin-top: 5px
-		border: 1px solid #dadada
+		border: 1px solid $border_color
 		border-bottom: none
 		li.app
 			height: 40px
-			border-bottom: 1px solid #dadada
+			border-bottom: 1px solid $border_color
 			a
 				color: #000
 				padding: 8px
@@ -56,9 +80,11 @@
 			a:hover .name
 				color = !link_color
 			a.selected
-				background-color: #dadada
+				background-color: #444
+				.name
+					color: #fff
 			a.selected:hover .name
-				color: #000
+				color: #fff
 			.name, .count
 				height: 24px
 				line-height: 24px
@@ -68,7 +94,7 @@
 				float: left
 			.count
 				width: 24px
-				background-color: #dadada
+				background-color: $border_color
 				-webkit-border-radius: 5px
 				-moz-border-radius: 5px
 				text-align: center
@@ -79,11 +105,6 @@
 	width: 700px
 
 /* App show */
-.empty
-	font-size: 1.5em
-	color: #999
-	text-align: center
-	padding-top: 40px
 .options-bar
 	height: 25px
 	padding-top: 6px
@@ -125,6 +146,7 @@
 			padding: 2px 6px
 			cursor: pointer
 	.search
+		background-color: #fff
 		width: 170px
 		height: 20px
 		line-height: 20px
@@ -132,9 +154,9 @@
 		position: absolute
 		top: 0
 		right: 0
-		border: 1px solid #dadada
+		border: 1px solid $border_color
 		border-bottom: none
-		color: #555
+		color: #999
 	.type-chooser
 		position: absolute
 		top: -1px
@@ -159,11 +181,12 @@
 			background-color = !link_color
 			color: #fff
 ul.reports
-	border: 1px solid #dadada
+	background-color: #fff
+	border: 1px solid $border_color
 	border-bottom: none
 	li.report
 		height: 50px
-		border-bottom: 1px solid #dadada
+		border-bottom: 1px solid $border_color
 		padding: 5px 10px
 		.stats
 			float: left
@@ -179,7 +202,7 @@ ul.reports
 				padding-top: 2px
 			.count
 				top: 5px
-				left: 0
+				left: 0 
 				background: transparent url(../images/counter.png) no-repeat 0 50%
 			.views
 				top: 25px
@@ -200,6 +223,9 @@ ul.reports
 			vertical-align: middle
 			float: right
 			text-align: right
+	li.empty
+		padding-top: 35px
+		background: transparent url(../images/zero-crash-reports.png) no-repeat 50% 50%
 
 .app-info
 	margin-top: 10px
@@ -208,7 +234,7 @@ ul.reports
 
 .report-info
 	padding-top: 10px
-	border-top: 1px solid #dadada
+	border-top: 1px solid $border_color
 
 /* Global styles */
 .right

@@ -108,6 +108,9 @@ form input[type="submit"] {
 .clear {
   clear: both; }
 
+body {
+  background: transparent url(../images/bg-texture.png) repeat 0 0; }
+
 #header {
   padding: 10px 0; }
   #header #logo {
@@ -129,12 +132,31 @@ form input[type="submit"] {
 .centered-form {
   width: 415px;
   margin: 0 auto;
-  background-color: #efefef;
+  background-color: white;
   padding: 20px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px; }
   .centered-form h2 {
     text-align: center; }
+
+/* Funny notes */
+.add-apps-note {
+  width: 237px;
+  height: 31px;
+  background: transparent url(../images/this-is-where-you-add-apps.png) no-repeat 0 0; }
+
+.have-some-apps {
+  width: 237px;
+  height: 75px;
+  background: transparent url(../images/now-that-you-have-some-apps.png) no-repeat 0 100%; }
+
+.fix-those-suckers {
+  height: 75px;
+  background: transparent url(../images/fix-those-suckers.png) no-repeat 50% 50%; }
+
+.nice-job {
+  height: 75px;
+  background: transparent url(../images/nice-job.png) no-repeat 50% 50%; }
 
 /* App list */
 .apps-sidebar {
@@ -146,15 +168,19 @@ form input[type="submit"] {
     padding: 5px 0; }
     .apps-sidebar .header .add-link {
       position: absolute;
-      top: 5px;
+      background: transparent url(../images/add.png) 0 50% no-repeat;
+      padding-left: 20px;
+      color: black;
+      top: 6px;
       right: 0; }
   .apps-sidebar ul {
+    background-color: white;
     margin-top: 5px;
-    border: 1px solid #dadada;
+    border: 1px solid #dfdfdf;
     border-bottom: none; }
     .apps-sidebar ul li.app {
       height: 40px;
-      border-bottom: 1px solid #dadada; }
+      border-bottom: 1px solid #dfdfdf; }
       .apps-sidebar ul li.app a {
         color: black;
         padding: 8px;
@@ -164,9 +190,11 @@ form input[type="submit"] {
       .apps-sidebar ul li.app a:hover .name {
         color: #cb0000; }
       .apps-sidebar ul li.app a.selected {
-        background-color: #dadada; }
+        background-color: #444444; }
+        .apps-sidebar ul li.app a.selected .name {
+          color: white; }
       .apps-sidebar ul li.app a.selected:hover .name {
-        color: black; }
+        color: white; }
       .apps-sidebar ul li.app .name, .apps-sidebar ul li.app .count {
         height: 24px;
         line-height: 24px;
@@ -176,7 +204,7 @@ form input[type="submit"] {
         float: left; }
       .apps-sidebar ul li.app .count {
         width: 24px;
-        background-color: #dadada;
+        background-color: #dfdfdf;
         -webkit-border-radius: 5px;
         -moz-border-radius: 5px;
         text-align: center;
@@ -188,12 +216,6 @@ form input[type="submit"] {
   width: 700px; }
 
 /* App show */
-.empty {
-  font-size: 1.5em;
-  color: #999999;
-  text-align: center;
-  padding-top: 40px; }
-
 .options-bar {
   height: 25px;
   padding-top: 6px;
@@ -235,6 +257,7 @@ form input[type="submit"] {
       padding: 2px 6px;
       cursor: pointer; }
   .options-bar .search {
+    background-color: white;
     width: 170px;
     height: 20px;
     line-height: 20px;
@@ -242,9 +265,9 @@ form input[type="submit"] {
     position: absolute;
     top: 0;
     right: 0;
-    border: 1px solid #dadada;
+    border: 1px solid #dfdfdf;
     border-bottom: none;
-    color: #555555; }
+    color: #999999; }
   .options-bar .type-chooser {
     position: absolute;
     top: -1px;
@@ -270,11 +293,12 @@ form input[type="submit"] {
       color: white; }
 
 ul.reports {
-  border: 1px solid #dadada;
+  background-color: white;
+  border: 1px solid #dfdfdf;
   border-bottom: none; }
   ul.reports li.report {
     height: 50px;
-    border-bottom: 1px solid #dadada;
+    border-bottom: 1px solid #dfdfdf;
     padding: 5px 10px; }
     ul.reports li.report .stats {
       float: left;
@@ -311,6 +335,9 @@ ul.reports {
       vertical-align: middle;
       float: right;
       text-align: right; }
+  ul.reports li.empty {
+    padding-top: 35px;
+    background: transparent url(../images/zero-crash-reports.png) no-repeat 50% 50%; }
 
 .app-info {
   margin-top: 10px; }
@@ -319,7 +346,7 @@ ul.reports {
 
 .report-info {
   padding-top: 10px;
-  border-top: 1px solid #dadada; }
+  border-top: 1px solid #dfdfdf; }
 
 /* Global styles */
 .right {

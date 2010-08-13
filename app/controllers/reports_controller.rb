@@ -9,6 +9,7 @@ class ReportsController < ApplicationController
   
   def show
     @report = @app.reports.find(params[:id])
+    @no_sidebar = true
   end
   
 
