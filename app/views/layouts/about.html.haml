@@ -34,4 +34,10 @@
         %li= link_to('IE8', 'http://www.microsoft.com/windows/internet-explorer/default.aspx')
     #footer
       .insides
-    = #render 'shared/analytics'
+        this is a
+        %a{ :href => "http://guicocoa.com" } gui cocoa
+        and
+        %a{ :href => "http://weretwoguys.com" } two guys
+        project - copyright ©
+        = Time.now.year
+    = render 'shared/analytics'

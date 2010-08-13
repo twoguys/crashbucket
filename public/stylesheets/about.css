@@ -108,8 +108,12 @@ form input[type="submit"] {
 .clear {
   clear: both; }
 
-body {
+#wrap {
   background: transparent url(../images/bg-texture.png) repeat 0 0; }
+
+#footer {
+  text-align: center;
+  color: #555555; }
 
 #logo {
   background: transparent url(../images/logo-large.png) no-repeat 50% 10px;
