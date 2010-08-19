@@ -9,7 +9,7 @@ module Authentication
       if authorized?
         return
       else
-        render :file => "#{RAILS_ROOT}/public/401.html", :status => :unauthorized 
+        render :file => "#{RAILS_ROOT}/public/401.html", :status => :unauthorized, :layout => false
       end
     else
       redirect_to login_path

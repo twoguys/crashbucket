@@ -12,10 +12,12 @@
         crashbucket - #{@title}
       - else
         crashbucket - iPhone crash tracking
+    = stylesheet_link_tag 'tables', :media => 'screen, projection'
     = stylesheet_link_tag 'app', :media => 'screen, projection'
     /[if lt IE 7]
       = stylesheet_link_tag 'ie', :media => 'screen, projection'
     = javascript_include_tag 'jquery-1.4.2.min'
+    = javascript_include_tag 'jquery.tablesorter.min'
     = javascript_include_tag 'rails'
     = javascript_include_tag 'application'
     = yield :head
@@ -29,12 +31,16 @@
             - if current_user
               #user-info
                 %strong= current_user.email
+                = link_to('admin', admin_dashboard_path) if current_user.admin?
                 = link_to('sign out', logout_path)
         #mid
           #flash
             = render 'shared/flash', :flash => flash
           .insides
-            = render 'shared/apps'
+            - if @admin
+              = yield
+            - else
+              = render 'shared/apps'
     #ie6_pwnage
       = "We've noticed you're using a pretty old browser and we're sad that you're missing out on so much!"
       %strong= "Please upgrade to one of these free browsers:"

@@ -1,8 +1,7 @@
 class Admin::BaseController < ApplicationController
   before_filter :admin_required
-  before_filter :apps_hack
+  before_filter {|c| @admin = true }
   
-  def apps_hack
-    @apps = []
+  def index
   end
 end

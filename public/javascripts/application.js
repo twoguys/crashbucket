@@ -6,6 +6,11 @@ function handleChooserHover() {
 	});
 }
 
+function setupTableSorting() {
+  $('table.tablesorter').tablesorter();
+}
+
 $(document).ready(function() {
 	handleChooserHover();
+	setupTableSorting();
 });
