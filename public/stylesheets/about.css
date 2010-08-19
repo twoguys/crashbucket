@@ -18,7 +18,7 @@ h1, h2 {
 
 html, body {
   font: 12px/18px Helvetica, Arial, sans-serif;
-  background: white;
+  background: white url(../images/bg-texture.png) repeat 0 0;
   color: #1e1e1e; }
 
 html, body, #wrap {
@@ -108,9 +108,6 @@ form input[type="submit"] {
 .clear {
   clear: both; }
 
-#wrap {
-  background: transparent url(../images/bg-texture.png) repeat 0 0; }
-
 #footer {
   text-align: center;
   color: #555555; }
@@ -137,7 +134,7 @@ form input[type="submit"] {
   margin-bottom: 30px;
   width: 960px;
   height: 220px;
-  background: #efefef url(../images/home-diagram.png) no-repeat 50% 50%;
+  background: white url(../images/home-diagram.png) no-repeat 50% 50%;
   border: 1px solid #dddddd; }
 
 .download {
