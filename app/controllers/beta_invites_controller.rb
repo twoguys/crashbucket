@@ -8,9 +8,9 @@ class BetaInvitesController < ApplicationController
     @beta_invite = BetaInvite.new(params[:beta_invite])
     
     if @beta_invite.save
-      redirect_to root_path, :notice => "We'll let you know!"
+      redirect_to new_beta_invite_path, :notice => "We'll let you know!"
     else
-      redirect_to root_path, :alert => "Check yo self!"
+      redirect_to new_beta_invite_path, :alert => "Check yo self! You forgot your email..."
     end
   end
   

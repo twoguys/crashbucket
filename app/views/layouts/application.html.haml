@@ -31,6 +31,8 @@
                 %strong= current_user.email
                 = link_to('sign out', logout_path)
         #mid
+          #flash
+            = render 'shared/flash', :flash => flash
           .insides
             = render 'shared/apps'
     #ie6_pwnage

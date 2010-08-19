@@ -139,6 +139,22 @@ form input[type="submit"] {
   .centered-form h2 {
     text-align: center; }
 
+#flash {
+  text-align: center;
+  color: black; }
+  #flash div {
+    padding: 5px 0; }
+  #flash .notice {
+    background-color: #85c5e5; }
+  #flash .alert {
+    background-color: #e58585; }
+
+.invite-explanation {
+  color: #777777;
+  border-top: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+  margin-bottom: 20px; }
+
 /* Funny notes */
 .add-apps-note {
   width: 237px;
