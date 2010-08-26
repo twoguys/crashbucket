@@ -1,7 +1,7 @@
 class App < ActiveRecord::Base
   
   belongs_to            :user
-  has_many              :reports
+  has_many              :reports, :dependent => :destroy
 
   validates_presence_of :name
   validates_presence_of :bundle_identifier
