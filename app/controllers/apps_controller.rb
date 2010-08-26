@@ -38,7 +38,7 @@ class AppsController < ApplicationController
   def create
     @app = current_user.apps.new(params[:app])
     
-    if current_user.apps.size > 4
+    if current_user.apps.size > 3
       flash[:alert] = "Sorry, the app limit us currently 4 during beta testing"
       render :action => 'new'
     elsif @app.save
