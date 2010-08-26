@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
-gem 'rails',          '3.0.0.beta4'
-#gem 'rails',          '3.0.0.rc'
+#gem 'rails',          '3.0.0.beta4'
+gem 'rails',          '3.0.0.rc'
 
 gem 'authlogic',      '2.1.5'
 gem 'haml',           '3.0.13'
@@ -10,6 +10,7 @@ gem 'syntax',         '1.0.0'#, :require => 'syntax/convertor/html'
 #gem 'will_paginate',  '2.3.14'
 #gem "will_paginate",   :git => "http://github.com/mislav/will_paginate.git",  :branch => "rails3"
 gem "will_paginate",  '3.0.pre2'
+#gem 'logworm_client'
 
 group :development do
   gem "mongrel"
