@@ -38,7 +38,10 @@ class AppsController < ApplicationController
   def create
     @app = current_user.apps.new(params[:app])
     
-    if @app.save
+    if current_user.apps.size > 4
+      flash[:alert] = "Sorry, the app limit us currently 4 during beta testing"
+      render :action => 'new'
+    elsif @app.save
       redirect_to apps_url, :notice => "App created successfully"
     else
       flash[:alert] = "There was an error creating a new app"
