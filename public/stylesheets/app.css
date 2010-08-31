@@ -336,13 +336,15 @@ ul.reports {
     ul.reports li.report .info {
       float: left;
       padding: 6px 0;
-      width: 520px; }
+      width: 500px; }
       ul.reports li.report .info .name {
         font-weight: bold; }
       ul.reports li.report .info .details {
-        color: #777777; }
+        color: #777777;
+        height: 1.4em;
+        overflow: hidden; }
     ul.reports li.report .when {
-      width: 100px;
+      width: 120px;
       height: 50px;
       line-height: 50px;
       vertical-align: middle;
