@@ -13,4 +13,11 @@ class Notifications < ActionMailer::Base
     mail(:to => invite.email, :subject => "[CrashBucket] Beta Invite")
   end
   
+  def crash(report)
+    @report       = report
+    @report_url   = app_report_url(report.app, report) 
+    
+    mail(:to => report.app.user.email, :subject => "[#{report.app.name}] #{report.exc_name}")
+  end
+  
 end
