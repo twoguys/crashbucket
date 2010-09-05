@@ -227,6 +227,11 @@ form input[type="submit"] {
 .main {
   float: right;
   width: 700px; }
+  
+.instructions {
+  background-color:white;
+  border:1px solid #dfdfdf;
+}
 
 /* App show */
 .options-bar {
