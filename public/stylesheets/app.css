@@ -228,10 +228,21 @@ form input[type="submit"] {
   float: right;
   width: 700px; }
   
+/* App instructions */
 .instructions {
   background-color:white;
   border:1px solid #dfdfdf;
+  padding:10px;
 }
+  .instructions h2 {
+    margin:0px;
+  }
+  .instructions ul {
+    margin:10px;
+  }
+    .instructions ul li {
+      margin:10px 0px;
+    }
 
 /* App show */
 .options-bar {
