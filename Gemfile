@@ -7,6 +7,7 @@ gem 'authlogic',      '2.1.6'
 gem 'haml',           '3.0.18'
 gem 'syntax',         '1.0.0'#, :require => 'syntax/convertor/html'
 gem "will_paginate",  '3.0.pre2'
+gem 'state_machine',  '0.9.4'
 #gem 'logworm_client'
 
 group :development do
