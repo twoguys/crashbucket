@@ -25,11 +25,11 @@ ActiveRecord::Schema.define(:version => 20100907021223) do
   add_index "apps", ["user_id"], :name => "index_apps_on_user_id"
 
   create_table "beta_invites", :force => true do |t|
-    t.string    "email"
-    t.string    "code"
-    t.timestamp "sent_at"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
+    t.string   "email"
+    t.string   "code"
+    t.datetime "sent_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "reports", :force => true do |t|
