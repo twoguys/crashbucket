@@ -1,4 +1,4 @@
 %li.app
   %a{:href => app_path(app), :class => @app == app ? "selected" : ""}
     .name= app.name
-    .count= app.reports_count
+    .count= app.reports.open.count

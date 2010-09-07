@@ -11,6 +11,7 @@ class Api::ReportsController < Api::BaseController
     
     if existing_report
       existing_report.increment!(:count)
+      existing_report.reopen if existing_report.closed?
       head :ok
     else
       if @report.save

@@ -9,6 +9,7 @@ gem 'syntax',         '1.0.0'#, :require => 'syntax/convertor/html'
 gem "will_paginate",  '3.0.pre2'
 gem 'state_machine',  '0.9.4'
 #gem 'logworm_client'
+gem 'rest-client'
 
 group :development do
   gem "mongrel"
