@@ -12,6 +12,16 @@ class ReportsController < ApplicationController
     @no_sidebar = true
   end
   
+  def close
+    @app.reports.find(params[:id]).close
+    redirect_to @app
+  end
+  
+  def open
+    @report = @app.reports.find(params[:id])
+    @report.reopen
+    redirect_to @app
+  end
 
   
   private

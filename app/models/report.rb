@@ -14,8 +14,21 @@ class Report < ActiveRecord::Base
   #after_initialize :generate_fingerprint
   before_create :generate_fingerprint
   
-  scope :open, where("")
-  scope :closed, where("")
+  scope :open,    where("state = ?", "open")
+  scope :closed,  where("state = ?", "closed")
+  
+  state_machine :state, :initial => :open do
+    state :open
+    state :closed
+    
+    event :close do
+      transition :open => :closed
+    end
+    
+    event :reopen do
+      transition :closed => :open
+    end
+  end
   
   attr_accessor :bundle_identifier
   
@@ -31,7 +44,9 @@ class Report < ActiveRecord::Base
   end
   
   def validate
-    errors.add(:bundle_identifier, "is invalid") unless app.bundle_identifier == self.bundle_identifier
+    if self.new_record?
+      errors.add(:bundle_identifier, "is invalid") unless app.bundle_identifier == self.bundle_identifier
+    end
   end
   
 end

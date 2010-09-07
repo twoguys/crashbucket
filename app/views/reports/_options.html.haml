@@ -6,4 +6,7 @@
     =# link_to("newest", "#", :class => 'sorter')
     =# link_to("frequent", "#", :class => 'sorter')
   .actions
-    = link_to("close", "#")
+    - if @report.open?
+      = link_to("close", ['close', @app, @report])
+    - else
+      = link_to("reopen", ['open', @app, @report])

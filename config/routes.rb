@@ -15,7 +15,12 @@ Crashreportapp::Application.routes.draw do |map|
       get :info
       get :closed
     end
-    resources :reports
+    resources :reports do
+      member do
+        get :close
+        get :open
+      end
+    end
   end
   
   namespace :api do
