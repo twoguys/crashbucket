@@ -17,9 +17,13 @@ class Report < ActiveRecord::Base
   scope :open,    where("state = ?", "open")
   scope :closed,  where("state = ?", "closed")
   
+  attr_accessor :bundle_identifier
+  
   state_machine :state, :initial => :open do
     state :open
     state :closed
+    
+    after_transition :on => :reopen, :do => :deliver_email
     
     event :close do
       transition :open => :closed
@@ -30,9 +34,11 @@ class Report < ActiveRecord::Base
     end
   end
   
-  attr_accessor :bundle_identifier
-  
   def self.per_page; 10; end  
+  
+  def deliver_email
+    Notifications.crash(self).deliver
+  end
   
   def generate_fingerprint
     salt = "#{self.exc_name}#{self.backtrace}".gsub(/0x(.*)[\t\s\n]/, "")
