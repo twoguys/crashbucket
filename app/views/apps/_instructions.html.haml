@@ -3,7 +3,7 @@
   %h3 1. Installation
   %ul
     %li= link_to "Download the iOS library", "https://s3.amazonaws.com/guicocoa_downloads/libcrashreport.zip"
-    %li Drag the 'libcrashreport' into your Xcode project (make sure "Copy Items" is selected)
+    %li Drag the 'libcrashreport' folder into your Xcode project (make sure "Copy Items" is selected)
     %li Include the SystemConfiguration framework in your project
   %h3 2. Usage
   %ul
@@ -16,6 +16,8 @@
       %code
         GCCrashReport *report = [GCCrashReport sharedReportWithAPIKey:@"#{@app.api_key}"];
     %li
+      Optionally set any properties on the report object
+    %li
       Put this line in your
       %code
         application:didBecomeActive
@@ -23,6 +25,7 @@
       %code
         [[GCCrashReport sharedReport] reportCrashes];
     %li
+      Conform to the
       %code
         GCCrashReportDelegate
       protocol and implement any of the methods you like
