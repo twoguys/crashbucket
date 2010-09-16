@@ -22,8 +22,8 @@ class AppsController < ApplicationController
 
   def closed
     @app = current_user.apps.find(params[:id])
+    @title = @app.name.downcase
     @reports = @app.reports.closed
-    #@reports = @app.reports.find_all_by_state("closed")
     @closed = true
     render 'show'
   end

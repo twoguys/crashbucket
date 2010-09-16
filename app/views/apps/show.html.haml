@@ -1,10 +1,10 @@
 = render 'options'
-- if @app.reports.count == 0
+- if @reports.count == 0
   = render :partial => "instructions"
 - else
   %ul.reports
     = render @reports
-  - if @open && !@reports.empty?
+  - if @open
     .fix-those-suckers
   - else
     .nice-job
