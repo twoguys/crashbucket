@@ -1,4 +1,18 @@
 %h3 Admin...for the win, it rhymes!
 
 %p
-  = link_to("Beta invites", admin_beta_invites_path)
+  %strong
+    = link_to("Invites:", admin_beta_invites_path)
+  = BetaInvite.count
+%p
+  %strong
+    Apps:
+  = App.count
+%p
+  %strong
+    Users:
+  = User.count
+%p
+  %strong
+    Reports:
+  = Report.count

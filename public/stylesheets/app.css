@@ -362,8 +362,7 @@ ul.reports {
     padding: 5px 0; }
 
 .instructions {
-  padding-top: 10px;
-  border-top: 1px solid #DFDFDF; }
+  padding-top: 10px; }
   .instructions h3 {
     margin-bottom: 10px; }
   .instructions ul {
@@ -383,3 +382,6 @@ ul.reports {
 
 .small {
   font-size: 0.9em; }
+
+.hidden {
+  display: none; }
