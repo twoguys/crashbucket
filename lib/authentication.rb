@@ -12,6 +12,7 @@ module Authentication
         render :file => "#{RAILS_ROOT}/public/401.html", :status => :unauthorized, :layout => false
       end
     else
+      session[:redirect_to] = request.path
       redirect_to login_path
     end
   end
@@ -37,6 +38,7 @@ module Authentication
         render :file => "#{RAILS_ROOT}/public/401.html", :status => :unauthorized 
       end
     else
+      session[:redirect_to] = request.path
       redirect_to login_path
     end
   end

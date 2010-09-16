@@ -10,6 +10,7 @@
           = form.label :password
           = form.password_field :password
         %li.submit
+          = hidden_field_tag :redirect_to, session[:redirect_to]
           = form.submit "Log in"
   .right.small
     Need an account?
