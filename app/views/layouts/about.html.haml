@@ -2,8 +2,8 @@
 %html{html_attrs('en')}
   %head
     %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "Content-Type" }
-    %meta{ :name => "Description", "http-equiv" => "Description", :content => "" }
-    %meta{ :name => "Keywords", "http-equiv" => "Keywords", :content => "" }
+    %meta{ :name => "Description", "http-equiv" => "Description", :content => "Crashbucket allows iPhone developers to easily track their app crashes" }
+    %meta{ :name => "Keywords", "http-equiv" => "Keywords", :content => "crashbucket iphone iOS beta test report track" }
     = csrf_meta_tag
     %link{ :id => 'favicon', :href => '/favicon.ico', :rel => 'icon', :type => 'image/x-icon' }/
     %title
@@ -24,6 +24,7 @@
             #logo
         #mid
           .insides
+            %h1.hidden Crashbucket allows iPhone developers to easily track their app crashes.
             = yield
     #ie6_pwnage
       = "We've noticed you're using a pretty old browser and we're sad that you're missing out on so much!"
