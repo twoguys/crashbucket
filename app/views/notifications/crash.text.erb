@@ -1,7 +1,7 @@
-Oh no, there was a crash!
+We received a crash from <%= @report.app.name %>
 
-<%= @report.exc_name %>
-<%= @report.exc_reason %>
+Exception name: <%= @report.exc_name %>
+Exception reason: <%= @report.exc_reason %>
 
-
+Log in to see more:
 <%= @report_url %>

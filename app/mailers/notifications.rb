@@ -1,6 +1,7 @@
 class Notifications < ActionMailer::Base
-  default :from => "noreply@#{ENV['DOMAIN']}"
+  default :from => "Crash Bucket <noreply@#{ENV['DOMAIN']}>"
 
+  default_url_options[:host] = ENV['DOMAIN']
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
   #
