@@ -5,14 +5,38 @@
     %li
       = link_to "Download the iOS library", "https://s3.amazonaws.com/guicocoa_downloads/libcrashreport.zip"
       (version 1.5)
-    %li Drag the 'libcrashreport' folder into your Xcode project (make sure "Copy Items" is selected)
-    %li Include the SystemConfiguration framework in your project
+    %li
+      Drag the
+      %strong
+        libcrashreport
+      folder into your Xcode project (make sure
+      %strong
+        Copy Items
+      is selected)
+    %li
+      Include the
+      %strong
+        SystemConfiguration
+      framework in your project
+    %li
+      Add the
+      %strong
+        :plain
+          -ObjC
+      flag to the
+      %strong
+        Other Linker Flags
+      option in your project build settings
   %h3 2. Usage
   %ul
-    %li Import GCCrashReport.h in your app delegate header file
+    %li
+      Import
+      %strong
+        GCCrashReport.h
+      in your app delegate header file
     %li
       Put this line in your
-      %code
+      %strong
         application:didFinishLaunchingWithOptions:
     %li
       %code
@@ -20,14 +44,7 @@
     %li
       Optionally set any properties on the report object
     %li
-      Put this line in your
-      %code
-        application:didBecomeActive
-    %li
-      %code
-        [[GCCrashReport sharedReport] reportCrashes];
-    %li
       Conform to the
-      %code
+      %strong
         GCCrashReportDelegate
       protocol and implement any of the methods you like
