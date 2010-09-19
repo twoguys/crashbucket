@@ -107,3 +107,6 @@ form input[type="submit"] {
 
 .clear {
   clear: both; }
+
+.hidden {
+  display: none; }
