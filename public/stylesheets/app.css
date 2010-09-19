@@ -108,6 +108,9 @@ form input[type="submit"] {
 .clear {
   clear: both; }
 
+.hidden {
+  display: none; }
+
 #header {
   padding: 10px 0; }
   #header #logo {

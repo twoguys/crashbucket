@@ -108,6 +108,9 @@ form input[type="submit"] {
 .clear {
   clear: both; }
 
+.hidden {
+  display: none; }
+
 #footer {
   text-align: center;
   color: #555555; }
