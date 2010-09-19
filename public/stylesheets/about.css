@@ -190,3 +190,6 @@ form input[type="submit"] {
     padding-top: 10px; }
   .instructions em {
     color: #cb0000; }
+    
+.hidden {
+  display: none; }
