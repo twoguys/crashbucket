@@ -1,0 +1,12 @@
+%table.tablesorter
+  %thead
+    %tr
+      %th name
+      %th owner
+      %th reports
+  %tbody
+    - @apps.each do |app|
+      %tr
+        %td= app.name
+        %td= app.user.email
+        %td= app.reports.size

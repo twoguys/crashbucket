@@ -31,6 +31,7 @@ Crashreportapp::Application.routes.draw do |map|
   
   namespace :admin do
     match '/'     => 'dashboard#index',       :as => :dashboard
+    resources :apps
     resources :beta_invites, :path => 'invites' do
       member do
         get :deliver
