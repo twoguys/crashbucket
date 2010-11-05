@@ -115,10 +115,24 @@ form input[type="submit"] {
   text-align: center;
   color: #555555; }
 
-#logo {
-  background: transparent url(../images/logo-large.png) no-repeat 50% 10px;
+#header {
   width: 100%;
-  height: 220px; }
+  height: 222px;
+  background: transparent url(../images/arrow.png) no-repeat 50% 50%;
+  margin: 40px 0; }
+  #header #logo {
+    background: transparent url(../images/logo-large.png) no-repeat 50% 10px;
+    width: 291px;
+    height: 222px;
+    float: left;
+    margin-left: 100px; }
+  #header #hoptoad-logo {
+    display: block;
+    background: transparent url(../images/hoptoad-icon.png) no-repeat;
+    width: 271px;
+    height: 212px;
+    float: right;
+    margin-right: 100px; }
 
 .signup {
   color: #777777;
@@ -131,6 +145,17 @@ form input[type="submit"] {
     margin: 0 auto;
     text-indent: -9999px;
     background: transparent url(../images/signup-button.png) no-repeat 0 0; }
+
+.about {
+  text-align: center;
+  color: #777777; }
+  .about h1 {
+    text-shadow: 0 1px 1px white;
+    margin: 30px 0 10px; }
+  .about video {
+    -webkit-box-shadow: 0 0 8px #444444;
+    -moz-box-shadow: 0 0 8px #444444;
+    box-shadow: 0 0 8px #444444; }
 
 .diagram {
   padding-bottom: 30px;
@@ -190,6 +215,3 @@ form input[type="submit"] {
     padding-top: 10px; }
   .instructions em {
     color: #cb0000; }
-    
-.hidden {
-  display: none; }

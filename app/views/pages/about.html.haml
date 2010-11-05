@@ -1,9 +1,14 @@
-.signup
-  = link_to('Sign up', signup_path, :class => 'button')
-  Already have an account?
-  = link_to("Sign in", login_path)
-
 .about
-  .diagram
 
+  .video
+    %video{:controls => 'controls', :height => '400', :videoHeight => '400', :videoWidth => '640', :width => '640'}
+      %source{:src => 'https://s3.amazonaws.com/guicocoa_downloads/hoptoad.mov', :type => 'video/quicktime'}
+      %source{:src => 'https://s3.amazonaws.com/guicocoa_downloads/hoptoad.ogv', :type => 'video/ogg'}
+      #placeholder
+        %p this requires HTML 5 video support
+        
   .clear
+  
+  %p
+    We'll stick around for a few months to give our existing users time to make the switch.
+    = link_to("Sign in", login_path)
